@@ -1,19 +1,255 @@
-%%This is a very basic article template.
-%%There is just one section and two subsections.
-\documentclass{article}
+%Inicio do Pre\^{a}mbulo
+
+\documentclass[12pt,openright,oneside,a4paper,brazil]{abntex2}
+%normaltoc - coloca o 
+%normalfigtabnum
+% Pacotes básicos 
+% ---
+\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{textcomp}
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+\usepackage{multirow}
+\usepackage{microtype} 			% para melhorias de justificaçãoo
+%\usepackage[latin1]{inputenc}
+% ---
+%Anteriores
+%\usepackage[brazil]{babel}
+%\usepackage[ansinew]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage{graphicx} %pacote para figuras JPGE para inserir figuras no texto
+%\usepackage[alf,abnt-full-initials=yes,abnt-etal-text=it]{abntcite}
+
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+%\usepackage{lipsum}				% para geração de dummy text (texto fictício)
+% ---
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+% =========  FIM Configurações para informar paginas onde ocorreram citações de autor na referencia ================
+
+% ---
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=black,        %linkcolor=blue,       	% color of internal links
+    	citecolor=black,        %citecolor=blue,    		% color of links to bibliography
+    	filecolor=magenta,                          		% color of file links
+		urlcolor=black,           %urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+\def \b{$\bullet$}
+%\renewcommand{\ABNTchapterfont}{\bfseries\selectfont}% Alterar fonte dos capitulos para Times New Roman
+%\renewcommand{\ABNTsectionfont}{\bfseries\selectfont}% Alterar fonte das secoes/subsecoes para Times New Roman
+%\setlength{\parindent}{1.5cm} %recuo de paragrafo
 
 \begin{document}
+%\renewcommand{\apudname}{\textit{apud}} % Colocar apud em italico
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+%======================= CAPA E FOLHA DE ROSTO =============================
+\include{capa}
+
+\include{folhaRosto}
+
+%======================= RESUMO =============================
+%\pagenumbering{roman}
+\include{resumo}
+%\clearpage
+
+%======================= LISTA DE FIGURAS =============================
+% ---
+% inserir lista de ilustrações
+% ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+% ---
+
+%========================LISTA DE TABELAS =============================
+% inserir lista de tabelas
+% ---
+
+%\pdfbookmark[0]{\listtablename}{lot}
+
+%\listoftables*
+
+%\clearpage
+%\cleardoublepage
+% ---
+
+% ---
+% inserir lista de abreviaturas e siglas
+% ---
+\begin{siglas}
+  \item[ANI]	 Automatic Idendification Number
+  \item[CAS]	 Channel Associated Singalling
+  \item[CCS]	 Commom Chanel Signalling
+  \item[DNIS]	 Dialed Number Identification Service
+  \item[DTMF]	 Dual-Tone Multri Frequency
+  \item[IP]		 Internet Protocol
+  \item[ISDN]	 Integrated Service Digital Network
+  \item[MFC]	 Multi-Frequency Compelido
+  \item[ODBC]	 Open Database Connectivity
+  \item[PABX]	 Private Automatic Branch eXchange
+  \item[PABX IP] Private Automatic Branch eXchange Internet Protocol
+  \item[PCM]	 Pulse Code Modelation
+  \item[PRI]	 Primary Rate Interface
+  \item[PSTN]	 Public Service Telephony Network
+  \item[RDSI]	 Rede Digital de Serviços Integrada
+  \item[RTPC]	 Rede de Tefefonia Pública Comutada
+  \item[SGDB]	 Sistema de Gerenciamento de Banco de Dados
+  \item[SS7]	 Signaling System 7
+  \item[TDM]	 Time-Division Multiplexing
+  \item[VoIP]	 Voice over Internet Protocol
+\end{siglas}
+% ---
+
+%======================= LISTA DE SIGLAS ==============================
+%\chapter*{Lista de siglas}
+%\begin{tabular}{lll}
+%	ANI     & & {\em Automatic Idendification Number} \\
+%	CAS     & & {\em Channel Associated Singalling} \\
+%	CCS     & & {\em Commom Chanel Signalling} \\
+%	DNIS     & & {\em Dialed Number Identification Service} \\
+%	DTMF     & & {\em Dual-Tone Multri Frequency} \\
+%	IP     & & {\em Internet Protocol} \\
+%	ISDN     & & {\em Integrated Service Digital Network} \\
+%	MFC     & & {\em Multi-Frequency Compelido} \\
+%	ODBC     & & {\em Open Database Connectivity} \\
+%	PABX     & & {\em Private Automatic Branch eXchange} \\
+%	PABX IP    & & {\em Private Automatic Branch eXchange Internet Protocol} \\
+%	PCM    & & {\em Pulse Code Modelation} \\
+%	PRI    & & {\em Primary Rate Interface} \\
+%	PSTN   & & {\em Public Service Telephony Network}\\
+%	RDSI   & & {\em Rede Digital de Serviços Integrada}\\
+%	RTPC   & & {\em Rede de Tefefonia Pública Comutada}\\
+%	SGDB   & & {\em Sistema de Gerenciamento de Banco de Dados}\\
+%	SS7   & & {\em Signaling System 7}\\
+%	TDM   & & {\em Time-Division Multiplexing}\\
+%	VoIP    & & {\em Voice over Internet Protocol} \\
+%\end{tabular}
+%\clearpage
+
+%============================ SIMBOLOS ================================
+% inserir lista de símbolos
+% ---
+\begin{simbolos}
+
+\item[$ \ast $] Asterisco
+
+\item[$ \# $] Sustenido
+
+\end{simbolos}
+
+\clearpage
+
+%============================ SUMÁRIO ================================
+%\renewcommand{\contentsname}{Sumário} %muda sumario para conteudo
+%\tableofcontents %sumário
+
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
+%\clearpage
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+%============================ CAP\'{I}TULOS =================================
+\include{capitulo1}
+\include{capitulo2}
+\include{capitulo3}
+
+%\include{capitulo4}
+
+%\include{capitulo5}
+% ----------------------------------------------------------
+% Finaliza a parte no bookmark do PDF
+% para que se inicie o bookmark na raiz
+% e adiciona espaço de parte no Sumário
+% ----------------------------------------------------------
+\phantompart
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Referências bibliográficas
 
 
-\section{Title}
+%==================== REFERENCIAS BIBLIOGRAFICAS =====================
+\renewcommand{\refname}{Referências Bibliográfica}
+\bibliography{refbib}   % Bibliografia
+%\thispagestyle{empty}
 
-\subsection{Subtitle}
+%============================== ANEXOS ===============================
+%\anexo
+%\chapter{Título do anexo}
 
-Plain text.
 
-\subsection{Another subtitle}
-
-More plain text.
+%---------------------------------------------------------------------
+% INDICE REMISSIVO
+%---------------------------------------------------------------------
+\phantompart
+\printindex
+%---------------------------------------------------------------------
 
 
 \end{document}
+
+% ------- Fim do Pre\^{a}mbulo - Inicio do Documento --------
