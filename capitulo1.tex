@@ -1,0 +1,128 @@
+%========================= CAPITULO 1 ==============================
+%INTRODUÇÃO, OBJETIVOS, JUSTIFICATIVAS/MOTIVAÇÃO, METODOLOGIA, ORGANIZAÇÃO DO TEXTO
+
+\chapter{Introdução}%Cap.1
+%\thispagestyle{empty}
+%\addcontentsline{toc}{chapter}{Introdução}
+Os órgãos de segurança pública como qualquer empresa ou instituição necessitam do sistema de telefonia para sua própria comunicação interna ou externa, bem como atender por meio de números emergenciais como, por exemplo, o número emergencial 190 da Polícia Militar.
+
+Um cidadão que efetua uma ligação para um número emergencial de um órgão de segurança pública necessita de um atendimento de emergência. Desse modo, as linhas emergenciais devem estar disponíveis 24 horas por dia, isto é, não devem haver linhas defeituosas, congestionadas ou comprometidas, seja por falha técnica ou humana. No entanto, essas falhas existem.
+
+Em uma rápida pesquisa realizada nos websites de busca de conteúdo por indexação, Google e Bing na data 02/11/2014 com as palavras-chave ``reclamações ligações 190 dourados'', e restringindo o local de busca para a cidade de Dourados, são retornados cerca de 505.000 e 56.400 resultados, respectivamente. Entre esses resultados encontram-se vários artigos jornalísticos de websites locais de informação, onde cidadãos reclamam da qualidade do teleatendimento emergencial da polícia militar. Em um artigo jornalístico\footnote{http://www.douradosnews.com.br/dourados/populacao-reclama-do-nao-funcionamento-do--da-pm} de 05 março 2014, o comandante Ary Carlos Barbosa do 3º Batalhão de Polícia Militar de Dourados relata:
+
+\begin{citacao}
+``Um ramal dos telefones da emergência está mudo, e os técnicos não conseguem identificar o problema, para a pessoa que está ligando, ela escuta chamando, mas para a gente não. Já chamamos à operadora, trocaram a fiação, mas não acham a linha que está com problema, às vezes ligam e cai em Deodápolis, Douradina''.
+\end{citacao}
+
+O problema relatado pelo comandante aparentemente é técnico, porém também pode se referir a uma falha humana, pois na mesma reportagem a autora \citeonline{eduardarosa2014} em seu artigo jornalístico descreve o depoimento de outras pessoas entrevistadas que disseram que tentaram por algumas vezes o atendimento e não conseguiram ser atendidas.
+
+Portanto, tendo como problema a reclamação da população do município de Dourados sobre as ligações feitas para o teleatendimento emergencial da Polícia Militar no município de Dourados, propõe-se neste trabalho proporcionar uma melhoria nesse teleatendimento através da utilização da tecnologia de telefonia virtual. Para isso será desenvolvido um protótipo de um sistema para agregação de serviços em um ambiente de telefonia baseado em VoIP\footnote{Voz sobre Protocolo de Internet.} \textit{(Voice over Internet Protocol)} com o emprego da ferramenta Asterisk.
+
+Com os avanços da tecnologia da informação e comunicação o sistema de telefonia tradicional foi modernizado, surgindo então a tecnologia VoIP. A VoIP representa uma mudança significativa nas telecomunicações modernas desde a invenção do telefone\apud{andersonramires2005}{michaelpowell2005}.
+
+A VoIP permite o tráfego de voz sobre redes de computadores, sendo possívelefetuar e receber ligações entre computadores, telefones comuns, telefones IP e celulares. Pode também ser utilizada como centrais de PABX\footnote{Central privada de comutação.} \textit{(Private Automatic Branch eXchange)}, que podem ser substituídas por servidores de PABX IP\footnote{Central privada de comutação sobre protocolo de internet.} \textit{(Private Automatic Branch eXchange Internet Protocol)} \cite{glauciadasilvaribeiro2011}.
+
+A utilização da tecnologia VoIP permite uma maior flexibilidade referente a utilização de serviços ligados a telefonia, pois admite a criação e manipulação dos mais variados serviços de telefonia, agregando valor a rede de telefonia \cite{andreagiardino2005}.
+
+Embora a VoIP tenha melhorias por utilizar da rede de dados para trafegar voz, é inegável que a rede de telefonia convencional possui uma abrangência maior, com sua estrutura envolvendo todas as localidades do planeta. Essa é uma grande vantagem que a tecnologia empregada na rede de telefonia pública comutada (RTPC), em inglês PSTN \textit{(Public Service Telephony Network)} possui sobre a tecnologia de VoIP. Porém, a VoIP proporciona ambientes que agregam valor a serviços de telefonia, mas não garante uma grande acessibilidade a eles, por se utilizar de rede de dados \cite{theodorewallingford2005}.
+
+No Brasil, \citeonline{alexandrekeller2014} foi um dos primeiros a acreditar, estudar, defender, empreender e divulgar o Asterisk. O Asterisk permite conectividade em tempo real entre as redes PSTN e redes VoIP, sendo considerada uma central de telefonia híbrida \cite{alexandrekeller2014}.
+
+Portanto, visando melhorar o teleatendimento emergencial da Polícia Militar de Dourados MS, pretende-se introduzir automatização e inteligência computacional nas ligações telefônicas de emergência. Para tanto, buscou-se uma proposta de telefonia visando tornar os trabalhos dos militares mais eficientes e eficazes através de uma infraestrutura viabilizada por comunicações unificadas, integradas com processos de negócio, e suportada por parcerias e serviços, além de ser uma solução robusta, rica em recursos e que pode ser expandida para atender as necessidades de comunicações da Polícia Militar de Dourados MS.
+
+Este trabalho não somente abrirá caminho para avanço tecnológico do teleatendimento emergencial de maneira interna, mas também se mostrará como forte instrumento para solução de dificuldades sociais, políticas e econômicas para os munícipes em geral.
+
+% ================= Objetivos =================================
+\section{Objetivos}
+\subsection{Objetivo Geral}
+O objetivo geral deste trabalho é propor uma melhoria do teleatendimento da Polícia Militar de Dourados através do desenvolvimento de um protótipo de um sistema de telefonia virtual com o emprego das tecnologias que a ferramenta Asterisk proporciona.
+
+\subsection{Objetivos Específicos}
+Dado o domínio do teleatendimento emergencial da Polícia Militar de Dourados, os objetivos específicos são:
+
+\begin{itemize}
+	\item Explorar o problema através de aplicação de questionários aos atendentes;
+	\item Mapear o fluxo operacional;
+	\item Ter o emprego de funcionalidades de PABX no teleatendimento.
+	\item Utilizar o ODBC \textit{(Open Database Connectivity)} para conectar um SGDB \textit{(Sistema de Gerenciamento de Banco de Dados)} ao Asterisk;
+	\item Utilizar de um SGDB para armazenar as informações de todas as chamadas recebidas pela central telefônica.
+	\item Realizar levantamento estatístico dessas informações.
+	\item Ampliar o entendimento das tecnologias de telefonia virtual e PABX IP.
+\end{itemize}
+
+%================== Justifica\c{c}\~{a}o/Motiva\c{c}\~{a}o =====================
+\section{Justificativa/Motivação}
+Devido as constantes reclamações da população douradense sobre o teleatendimento emergencial da Polícia Militar de Dourados, e a possível deficiência técnica ou até mesmo humana no teleatendimento emergencial da Polícia Militar de Dourados. Tem-se como motivação para este trabalho uma proposta de melhoria nesse teleatendimento emergencial, explorando uma alternativa viável e acessível como a VoIP que está em constante evolução e expansão, bem como, o emprego de uma ferramenta de licença gratuita como o Asterisk que agrega uma gama enorme de serviços a um ambiente de telefonia convencional, trazendo não tão somente conforto e segurança ao atendentes bem como aos cidadãos Douradenses.
+
+\section{Metodologia}
+Explorar as possíveis falhas técnicas ou até mesmo humanas do teleatendimento, através do emprego de um questionário aos teleatendentes, bem como a permanência de um período no teleatendimento da Polícia Militar para observação da rotina de trabalho.
+
+Realizar um estudo teórico da telefonia convencional, e da telefonia com a utilização da tecnologia VoIP, bem como, estudo da possível interatividade, ou seja, a evolução entre elas em uma primeira instância e, sucessivamente, verificar suas viabilidades práticas, através de um protótipo de servidor VoIP com o Asterisk, visando o teleantendimento emergencial da Polícia Militar de Dourados.
+
+A parte prática será a implementação do prototipo de uma central telefônica através da ferramenta Asterisk para esse teleatendimento, bem como, as funcionalidades e melhorias que esta ferramenta vai agregar a este teleatendimento.  
+\newpage
+%======================== Cronograma ==============================
+\section{Cronograma}
+\thispagestyle{empty}
+
+\begin{center}
+\begin{table}[h]
+	\footnotesize
+    \begin{tabular}{|c|c|c|c|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|}
+    \hline
+    \multicolumn{4}{|c|}{\textbf{Meses}} & \multicolumn{4}{c|}{\textbf{Fev}} & \multicolumn{4}{c|}{\textbf{Mar}} & \multicolumn{4}{c|}{\textbf{Abri}} & \multicolumn{4}{c|}{\textbf{Maio}} & \multicolumn{4}{c|}{\textbf{Junho}} \\ \hline
+    \multicolumn{4}{|c|}{\textbf{Etapas/Semanas}} &\tiny1 &\tiny2 &\tiny3 &\tiny4 &\tiny1 &\tiny2 &\tiny3 &\tiny4 &\tiny1 &\tiny2 &\tiny3 &\tiny4 &\tiny1 &\tiny2 &\tiny3 &\tiny4 &\tiny1 &\tiny2 &\tiny3 &\tiny4 \\ \hline
+    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{Plano de Trabalho}} } & \multicolumn{20}{c|}{} \\ 
+    \multicolumn{4}{|c|}{} & \multicolumn{20}{c|}{} \\ \hline
+    \multicolumn{4}{|c|}{\multirow{2}{*}{Elaboração do Plano de Trabalho} } &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & & & & & & & & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & & & & & & & & & \\ \hline
+    \multicolumn{4}{|c|}{\multirow{2}{*}{Entrega do Plano de Trabalho} } & & & & &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & & & & & & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{} & & & & &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & & & & & & & \\ \hline
+    
+    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{Capítulo 1}} } & \multicolumn{20}{c|}{} \\ 
+    \multicolumn{4}{|c|}{} & \multicolumn{20}{c|}{} \\ \hline
+    \multicolumn{4}{|c|}{\multirow{2}{*}{Introdução} } & & & & & & &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & & & & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{} & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & & & & & \\ \hline
+    \multicolumn{4}{|c|}{\multirow{2}{*}{Objetivos} } & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{} & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & & & \\ \hline
+    \multicolumn{4}{|c|}{\multirow{2}{*}{Justificativa e Motivação} } & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{} & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & & \\ \hline
+    \multicolumn{4}{|c|}{\multirow{2}{*}{Organização do Texto} } & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{} & & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & \\ \hline
+    
+    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{Revisão Bibliográfica}} } & \multicolumn{20}{c|}{} \\ 
+    \multicolumn{4}{|c|}{} & \multicolumn{20}{c|}{} \\ \hline
+    \multicolumn{4}{|c|}{\multirow{2}{*}{Capítulo 2 - Telefonia convencional} } & & & & & & & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} & & & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{} & & & & & & & & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} & & & \\ \hline
+    \multicolumn{4}{|c|}{\multirow{2}{*}{Capítulo 3 - Voz sobre IP (VoIP)} } & & & & & & & & & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} \\ \cline{5-24}
+    \multicolumn{4}{|c|}{} & & & & & & & & & & & & & & & & & & & & \\ \hline
+    
+    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{Resultados Preliminares}} } & & & & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & & & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{} & & & & & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} & & & & \\ \hline
+    
+    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{Implementações}} } & & & & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & & & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{} & & & & & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} & & & & \\ \hline
+    
+    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{Entrega da 1 Etapa Concluida}} } & & & & & & & & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} & & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{} & & & & & & & & & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} & & \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{tabular}{|c c| c c|}
+\hline
+  Previsto = &\colorbox{red}{} & Realizado = &\colorbox{blue}{} \\ \hline
+\end{tabular}
+
+\end{center}
+
+%para nova pagina
+\newpage
+%==================== Organiza\c{c}\~{a}o do Texto ========================
+\section{Organização do Texto}
+Este trabalho está estruturado em seis capítulos, como segue. O capítulo 2 descreve sucintamente o histórico, funcionamento e organização da telefonia convencional, bem como, conceitos gerais sobre o atual sistema de telefonia ou seja, o sistema de telefonia pública comutada (PSTN), seus tipos de sinalização e estabelecimento de circuitos. 
+
+O capítulo 3 será apresentado o histórico do VoIP, bem como, o conceito dessa tecnologia e enfatiza a diferença entre telefonia IP e a VoIP. Expor os protocolos de comunicação utilizados na VoIP, e os benefícios, vantagens e desvantagens da tecnologia VoIP e quais os métodos devem ser seguidos para segurança e evitar ameaças ao sistema de telefonia VoIP.
+
+O capítulo 4 apresentará as possíveis falhas observadas no teleatendimento da Polícia Militar de Dourados, e as apresentadas pelos atendentes desse teleatendimento através do questionário. Além disso, apresentará a análise de requisitos necessária para propor a solução adequada para esse teleatendimento, bem como, a proposta de solução de VoIP detalhando o protótipo.
+
+O capítulo 5 apresentará a ferramenta gratuita escolhida, ou seja, o servidor VoIP Asterisk, bem como, suas funcionalidades, principais características, configuração e sua interação com telefonia convencional. Finalmente o capítulo 6 apresentará as conclusões, assim como algumas sugestões de trabalhos futuros, para a continuidade desta pesquisa.
