@@ -54,7 +54,7 @@ A metodologia envolveu as seguintes etapas:
   \item Descrever os conceitos gerais sobre VoIP, seu histórico, diferença entre VoIP e telefonia IP, protocolos utilizados tanto na sinalização como na transmissão, vantagens, desvantagens e segurança para aplicação desta tecnologia.
   \item Apresenta detalhes da ferramenta escolhida, o Asterisk, bem como, suas funcionalidades de musica em espera, transferência, captura, estacionamento e gravação de chamadas e salas de conferencia.
   \item Avaliar as principais falhas técnicas apontadas pelos atendentes e observadas no período de permanência no teleatendimento emergencial da Polícia Militar, bem como, realizar a análise de requisitos necessários para a aplicação do protótipo do servidor VoIP.
-  \item Relatar os teste e configurações do protótipo no teleatendimento, e apresentar as considerações conclusões, assim como sugestões de trabalhos futuros, para a continuidade da pesquisa.
+  \item Relatar a aplicação, configurações e os testes do protótipo ao ser empregrado no teleatendimento, e apresentar as considerações sobre os resultados obtidos.
 \end{enumerate}
 
 Detalhando a metodologia, tem-se na primeira etapa, a fundamentação teórica. Onde exibira os conceitos sobre o sistema de telefonia pública comutada (PSTN), ou seja, o atual sistema de telefonia que conhecemos, sistema esse que serviu de base para criação da tecnologia de telefonia baseado em VoIP.
@@ -65,7 +65,7 @@ Detalhando a metodologia, tem-se na primeira etapa, a fundamentação teórica. 
 
 	Na quarta etapa, mostrara, os resultados, ou seja, as falhas técnicas, ou mesmo humanas apresentados pelos atendentes através do emprego do questionário, bem como, pelo período de permanência para mapear o fluxo operacional e realizar à analise de requisitos para o emprego e configuração da ferramenta com eficiência e qualidade no teleatendimento.
 
-	Na quinta etapa, sucederá a configuração e aplicação do protótipo do servidor VoIP, bem como, coletar os resultados, as considerações finais, e as conclusões  ao aplicarmos a ferramenta no teleatendimento, por fim, sugestões para trabalhos futuros, onde podera dar continuidade na pesquisa. 
+	Na quinta etapa, sucederá a instalação do sistema operacional, das bibliotecas e dependências do Asterisk, bem como, sua própria instalação e configuração para à aplicação do protótipo do servidor VoIP, e ainda, coletar os resultados ao aplicarmos a ferramenta no teleatendimento.
 
 
 \newpage
@@ -87,22 +87,24 @@ Detalhando a metodologia, tem-se na primeira etapa, a fundamentação teórica. 
     \multicolumn{4}{|c|}{\multirow{2}{*}{Entrega do Plano de Trabalho} } & & & & &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & & & & & & \\ \cline{5-24}
     \multicolumn{4}{|c|}{} & & & & &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & & & & & & & \\ \hline
     
-    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{Capítulo 1}} } & \multicolumn{20}{c|}{} \\ 
+    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{Preâmbulo}} } & \multicolumn{20}{c|}{} \\ 
     \multicolumn{4}{|c|}{} & \multicolumn{20}{c|}{} \\ \hline
-    \multicolumn{4}{|c|}{\multirow{2}{*}{Introdução} } & & & & & & &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & & & & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{\multirow{2}{*}{1. Introdução} } & & & & & & &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & & & & \\ \cline{5-24}
     \multicolumn{4}{|c|}{} & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & & & & & \\ \hline
-    \multicolumn{4}{|c|}{\multirow{2}{*}{Objetivos} } & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{\multirow{2}{*}{1.1 Objetivos} } & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & & \\ \cline{5-24}
     \multicolumn{4}{|c|}{} & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & & & \\ \hline
-    \multicolumn{4}{|c|}{\multirow{2}{*}{Justificativa e Motivação} } & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{\multirow{2}{*}{1.2 Justificativa e Motivação} } & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & \\ \cline{5-24}
     \multicolumn{4}{|c|}{} & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & & \\ \hline
-    \multicolumn{4}{|c|}{\multirow{2}{*}{Organização do Texto} } & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & \\ \cline{5-24}
+        \multicolumn{4}{|c|}{\multirow{2}{*}{1.3 Metodologia} } & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{} & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & & \\ \hline
+    \multicolumn{4}{|c|}{\multirow{2}{*}{1.5 Organização do Texto} } & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & \\ \cline{5-24}
     \multicolumn{4}{|c|}{} & & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & \\ \hline
     
-    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{Revisão Bibliográfica}} } & \multicolumn{20}{c|}{} \\ 
+    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{2. Revisão Bibliográfica}} } & \multicolumn{20}{c|}{} \\ 
     \multicolumn{4}{|c|}{} & \multicolumn{20}{c|}{} \\ \hline
-    \multicolumn{4}{|c|}{\multirow{2}{*}{Capítulo 2 - Telefonia convencional} } & & & & & & & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} & & & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{\multirow{2}{*}{2.1 Telefonia convencional} } & & & & & & & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} & & & \\ \cline{5-24}
     \multicolumn{4}{|c|}{} & & & & & & & & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} & & & \\ \hline
-    \multicolumn{4}{|c|}{\multirow{2}{*}{Capítulo 3 - Voz sobre IP (VoIP)} } & & & & & & & & & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} \\ \cline{5-24}
+    \multicolumn{4}{|c|}{\multirow{2}{*}{2.2 Voz sobre IP (VoIP)} } & & & & & & & & & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} \\ \cline{5-24}
     \multicolumn{4}{|c|}{} & & & & & & & & & & & & & & & & & & & & \\ \hline
     
     \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{Resultados Preliminares}} } & & & & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & & & \\ \cline{5-24}
@@ -127,10 +129,14 @@ Detalhando a metodologia, tem-se na primeira etapa, a fundamentação teórica. 
 \newpage
 %==================== Organiza\c{c}\~{a}o do Texto ========================
 \section{Organização do Texto}
-Este trabalho está estruturado em seis capítulos, como segue. O capítulo 2 descreve sucintamente o histórico, funcionamento e organização da telefonia convencional, bem como, conceitos gerais sobre o atual sistema de telefonia ou seja, o sistema de telefonia pública comutada (PSTN), seus tipos de sinalização e estabelecimento de circuitos. 
+Este trabalho está estruturado em cinco capítulos, descrito da seguinte forma:
 
-O capítulo 3 será apresentado o histórico do VoIP, bem como, o conceito dessa tecnologia e enfatiza a diferença entre telefonia IP e a VoIP. Expor os protocolos de comunicação utilizados na VoIP, e os benefícios, vantagens e desvantagens da tecnologia VoIP e quais os métodos devem ser seguidos para segurança e evitar ameaças ao sistema de telefonia VoIP.
+O capítulo 1, descreve de maneira sucinta a abordagem do assunto que será trabalhado, ou seja, o problema apresentado e a escolha da solução a qual sera empregada para a solução deste.
 
-O capítulo 4 apresentará as possíveis falhas observadas no teleatendimento da Polícia Militar de Dourados, e as apresentadas pelos atendentes desse teleatendimento através do questionário. Além disso, apresentará a análise de requisitos necessária para propor a solução adequada para esse teleatendimento, bem como, a proposta de solução de VoIP detalhando o protótipo.
+O capítulo 2 apresentara a revisão bibliográfica, ou seja, o referencial teórico, para que se possa elaborar o projeto. 
 
-O capítulo 5 apresentará a ferramenta gratuita escolhida, ou seja, o servidor VoIP Asterisk, bem como, suas funcionalidades, principais características, configuração e sua interação com telefonia convencional. Finalmente o capítulo 6 apresentará as conclusões, assim como algumas sugestões de trabalhos futuros, para a continuidade desta pesquisa.
+O capítulo 3 tera a descrição do projeto, deste o sistema operacional eleito para que se possa instalar a ferramenta Asterisk, a sua própria instalação e de suas bibliotecas e dependências, por fim sua configuração para que se possa chegar ao resultado esperado que é o servidor VoIP, para que possa ser empregado no teleatendimento.
+
+O capítulo 4, será dedicado aos testes do servidor VoIP, bem como, a coleta dos resultados para levantamento e analise dos detalhes da ferramenta ao ser aplicada no ambiente do teleatendimento.
+
+O capítulo 5 apresentará as conclusões, assim como algumas sugestões de trabalhos futuros, para a continuidade desta pesquisa.
