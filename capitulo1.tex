@@ -4,13 +4,13 @@
 \chapter{Introdução}%Cap.1
 %\thispagestyle{empty}
 %\addcontentsline{toc}{chapter}{Introdução}
-Em sociedade sempre necessitamos de serviços, sejam eles públicos ou privados, mais quando há a necessidade de um serviço de um órgão da segurança pública, geralmente ele não está presente, e o meio mais preciso e ágil de acioná-lo é através do telefone emergencial que este disponibiliza.
+Em sociedade sempre necessitamos de serviços, sejam eles públicos ou privados, mas quando ocorre a necessidade de um serviço de um órgão da segurança pública, geralmente ele não está presente nas proximidades, e o meio mais preciso e ágil de acioná-lo é através do telefone emergencial que este disponibiliza.
 
 Os órgãos de segurança pública como qualquer empresa ou instituição necessitam do sistema de telefonia para sua própria comunicação interna ou externa, bem como atender por meio de números emergenciais como, por exemplo, o número emergencial 190 da Polícia Militar.
 
 Um cidadão que efetua uma ligação para um número emergencial de um órgão de segurança pública necessita de um atendimento de emergência. Desse modo, as linhas emergenciais devem estar disponíveis 24 horas por dia, isto é, não devem haver linhas defeituosas, congestionadas ou comprometidas, seja por falha técnica ou humana. No entanto, essas falhas existem.
 
-No município de Dourados, o comandante Ary Carlos Barbosa do 3º Batalhão de Polícia Militar relata em um artigo jornalistico\footnote{http://www.douradosnews.com.br/dourados/populacao-reclama-do-nao-funcionamento-do-190-da-pm}
+No município de Dourados, o comandante Ary Carlos Barbosa do 3º Batalhão de Polícia Militar relata em um artigo jornalistico\footnote{http://www.douradosnews.com.br/dourados/populacao-reclama-do-nao-funcionamento-do-190-da-pm}:
 
 \begin{citacao}
 ``Um ramal dos telefones da emergência está mudo, e os técnicos não conseguem identificar o problema, para a pessoa que está ligando, ela escuta chamando, mas para a gente não. Já chamamos à operadora, trocaram a fiação, mas não acham a linha que está com problema, às vezes ligam e cai em Deodápolis, Douradina''.
@@ -24,7 +24,9 @@ A VoIP permite o tráfego de voz sobre redes de computadores, sendo possívelefe
 
 Embora a VoIP tenha melhorias por utilizar da rede de dados para trafegar voz, é inegável que a rede de telefonia convencional possui uma abrangência maior, com sua estrutura envolvendo todas as localidades do planeta. Essa é uma grande vantagem que a tecnologia empregada na rede de telefonia pública comutada (RTPC), em inglês PSTN \textit{(Public Service Telephony Network)} possui sobre a tecnologia de VoIP \cite{theodorewallingford2005}.
 
-Portanto, buscou-se uma ferramenta de licença gratuita que implemente uma central de telefonia híbrida o Asterisk. O Asterisk  permite conectividade em tempo real entre as redes PSTN e a tecnologia VoIP, ou seja, gerencia o áudio trafegando em canais de comunicação analogicos, digitais e também em redes TCP/IP \cite{alexandrekeller2014}.
+Portanto, buscou-se uma ferramenta de licença gratuita que implemente uma central de telefonia híbrida o Asterisk. O Asterisk  permite conectividade em tempo real entre as redes PSTN e a tecnologia VoIP, ou seja, gerencia o áudio trafegando em canais de comunicação analógicos, digitais e também em redes TCP/IP \cite{alexandrekeller2014}.
+
+Existe outras ferramentas de licença gratuita com o mesmo propósito do Asterisk, porém estas são compilações de sistemas operacionais Linux já com Asterisk instalado, onde estas utilizam-se de recursos gráficos para a manipulação dos arquivos de configuração do Asterisk. Logo optou-se pelo Asterisk de forma nativa, pois além da compreensão da configuração desta, haverá o entendimento de sua instalação.
 
 % ================= Objetivos =================================
 \section{Objetivos}
@@ -36,12 +38,9 @@ Dado o domínio do teleatendimento emergencial da Polícia Militar de Dourados, 
 
 \begin{itemize}
 	\item Explorar o problema através de aplicação de questionários aos atendentes;
-	\item Mapear o fluxo operacional;
 	\item Ter o emprego de funcionalidades de PABX no teleatendimento.
-	\item Utilizar o ODBC \textit{(Open Database Connectivity)} para conectar um SGDB \textit{(Sistema de Gerenciamento de Banco de Dados)} ao Asterisk;
 	\item Utilizar de um SGDB para armazenar as informações de todas as chamadas recebidas pela central telefônica.
 	\item Realizar levantamento estatístico dessas informações.
-	\item Ampliar o entendimento das tecnologias de telefonia virtual e PABX IP.
 \end{itemize}
 
 %================== Justifica\c{c}\~{a}o/Motiva\c{c}\~{a}o =====================
