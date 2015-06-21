@@ -137,3 +137,206 @@ Alguns termos utilizados quando nos referimos a links E1, seja com sinalização
   \item \textbf{Escorregamento}, é a perda do alinhamento entre os canais, em decorrência da perda de sincronia do clock, onde por exemplo o canal 10 (dez) de um lado não esta mais alinhado com o canal 10 do outro lado do circuito.
   \item \textbf{TAPS}, é o cancelamento do eco, ou mesmo supressores de eco, onde após realizarem a identificação e o treinamento (echotraining) do nível do eco dentro da ligação, aplicam os filtros ao áudio da chamada dependendo do valor do TAPS, como 32 TAPS (4 ms), 64 TAPS (8 ms), 128 TAPS (16 ms ), 256 TAPS (32 ms) e 512 TAPS (64 ms).
 \end{itemize}
+
+\section{Voz sobre IP (VoIP)} %\label{cap_exemplos}
+%\thispagestyle{empty}
+\subsection{Funcionamento do VoIP}
+Desde o ano de 1962 a transmissão de voz através da rede de computadores vem sendo arquitetada, em 1977 foi proposto um protocolo para a transmissão de voz em forma de pacotes para uso militar, pelo IETF (\textit{Internet Engineering Task Force}) através de uma RFC (\textit{Request for Comments}) \cite{dancohen1977}.
+
+A tecnologia de VoIP surgiu definitivamente em Israel no ano de 1995, por um grupo de pesquisadores, interessados em desenvolver um sistema que permitisse utilizar os recursos multimídias de um computador doméstico para iniciar o trafego de voz digitalizada através da internet. No ano seguinte o ITU (\textit{International Telecommunication Union}) disponibilizou a primeira versão da recomendação H.323, sendo considerado o primeiro padrão para VoIP \cite{eduardomaronasmonks2006}.
+
+Uma série de técnicas e protocolos são utilizados para transportar a voz em uma rede de pacotes. Os codecs  codificadores/decodificadores, fazem a transformação das ondas sonoras da voz em  códigos binários, ou seja, assim que a voz e captada pelo microfone as amostras passam pelos processos de quantização, codificação e compressão, para que possa ser transportada de maneira eficiente em rede de pacotes, como demonstrado na figura \ref{Figura6}. Após sua compressão o fluxo de bits é encapsulado em datagramas UDP, e posteriormente encapsulado em pacotes IP, logo os pacotes são transportados sem qualquer distinção pela rede, como qualquer outro pacote de dados. No receptor é que acontece o processo de descompressão, decodificação da voz, porém este tem que possuir o codec apropriado \cite{eduardomaronasmonks2006}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15.0cm]{imagens/transmissaoVozRde.jpg}
+	\caption{Transmissão da voz através de rede de pacotes.}
+    \label{Figura6}
+    Fonte: \cite{eduardomaronasmonks2006}
+\end{figure}
+
+O Funcionamento do VoIP ocorre através de comutação de pacotes e para que os pacotes sejam enviados faz-se, necessário, o perfeito funcionamento dos protocolos. O protocolo é o padrão para a comunicação de dados e na interligação de redes, a rede não funciona sem os protocolos, um protocolo é que especifica como um programa deve preparar os pacotes para serem enviados para o próximo estágio no processo de comunicação. \cite{andersonramires2005}.
+
+\subsection{Tipos de Redes}
+O VoIP pode utilizar tanto redes baseadas em circuitos, onde é a forma  tradicional de rede para carregar a voz, como rede baseadas em pacotes, que conecta e transporta informações entre computadores remotos.
+
+\subsubsection{Redes baseadas em circuitos}
+A comutação de circuito é a tecnologia tradicional de rede empregada para carregar a voz, é orientada a conexão, utiliza técnicas de multiplexação para concentrar inúmeras conversações em um único tronco físico. A TDM (\textit{Time Divison Multiplexing}) é uma técnica de multiplicação que não utiliza de funções complexas de controle de tráfego. Os usuários não podem afetar a qualidade de serviços um do outro, e são assinalados a intervalos de tempo fixo, consequentemente a qualidade do serviço é determinística e previsível. O TDM não permite maximizar a utilização de banda utilizada, e transferências como de arquivos e video conferencia necessitam de banda variável em suas transmissões, o TDM aloca fatias de tempo para uma conexão mesmo se o usuário não estiver transmitindo algo, como obeservado na figura \ref{Figura7}, isso garante a qualidade mas desperdiça recursos, se torna ineficiente para tráfego com características de rajada, devido a sua alocação estática. Porém é eficiente
+para suportar trafego de voz \cite{thiagowinkler2007}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=16.0cm]{imagens/comutacaoCircuitosTDM.jpg}
+	\caption{Comutação de Circuitos (TDM).}
+    \label{Figura7}
+    Fonte: \cite{eduardomaronasmonks2006}
+\end{figure}
+
+\subsubsection{Redes baseadas em pacotes}
+Transportar informações entre computadores remotos é a finalidade da rede de comunicação de dados. Sua eficiência se da por transmitir o mais rápido possível a maior quantidade de informações válidas entre o máximo de usuários. A vazão (throughput) medida em bits por segundo, é que determina o desempenho básico em rede de computadores. Os congestionamentos que geralmente causam o aumente de retransmissão das informações e as perdas de pacotes, em consequência disso acaba afetando a vazão \cite{davidson2008}.
+
+Os usuários acabam percebendo a variação de sobrecarga da rede, através do aumento de tempo de resposta, ocasionando insatisfação sobre a qualidade do serviço prestado. O comportamento transparente seria o ideal, pois para os usuários e como eles estivessem interligados sem o compartilhamento de recursos, assim não haveria nenhum tipo de contenção de tráfego causado pela rede. A comutação de pacotes é a tecnologia tradicional de rede para carregar dados, os pacotes podem ser comutados sem estabelecer uma conexão previa. O protocolo IP é um exemplo, pois os pacotes são roteados em cada nó da rede e nenhuma banda é pré-alocada para a transferência de dados. Esta tecnologia maximiza o uso da rede, porém não garante a qualidade de serviço pois, não há qualquer alocação de recursos, obeservado na figura \ref{Figura8}. A largura de banda ocupada pelo usuário acaba variando a cada instante de acordo com a carga da rede, onde esta tem a característica de rede de melhor esforço (\textit{best
+effort}) \cite{adrianoramosgoncalves2001}.
+
+Outros exemplos de redes baseados em pacote são a IPX(\textit{Internet Packet Exchange}), MAN (\textit{Redes Metropolitanas}), as WAN (\textit{Wide Area Network}) que são as redes de longa distância e ainda conexões discadas usando PPP (\textit{Point-to-Point Protocol}).
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=16.0cm]{imagens/comutacaoPacotes1.jpg}
+	\caption{Comutação de Pacotes.}
+    \label{Figura8}
+    Fonte: \cite{eduardomaronasmonks2006}
+\end{figure}
+
+\subsection{Protocolos}
+
+Os protocolos VoIP podem ser categorizados como protocolos de sinalização e  protocolos de mídia. Basicamente existe protocolos de sinalização proprietários e abertos em VoIP, entre os proprietários estão o Skynny da Cisco, utilizado no serviço Skype e as variações dos protocolos abertos, a exemplo do protocolo SIP, que está sendo utilizado no Microsoft Messenger. Apesar de haver uma grande base destes protocolos proprietários, cada vez mais os fabricantes de equipamentos estão adotando os protocolos de padrão aberto, principalmente o SIP. Entre os protocolos de sinalização abertos os mais utilizados são: \cite{davidson2008}
+\begin{itemize}
+  \item H.323 (\textit{Sistemas Audiovisuais e Multimídia});
+  \item SIP (\textit{Session Initiation Protocol});
+  \item MGCP (\textit{Media Gateway Control Protocol});
+  \item IAX (\textit{Inter-Asterisk Exchange}).
+\end{itemize}
+
+Há ainda os protocolos responsaveis pelo tráfego da mídia são o RTP (\textit{Real Time Protocol}) e o protocolo auxiliar RTPC (\textit{Real Time Control Protocol}). Ambos são transportados sobre os protocolos UDP e IP \cite{davidson2008}.
+
+\subsubsection{Protocolos de sinalização}
+
+\subsubsubsection{Protocolo H.323}
+O H.323 é o protocolo mais aproveitado em sistemas de comunicação multimídia baseado em pacotes. Faz parte da família de recomendações ITU-T (\textit{International Telecommunication Union Telecommunication Standardization Sector}) H.32x, a qual pertence à série H da ITU-T, versando sobre “Sistemas Audiovisuais e Multimídia”. O padrão H.323 tem como objetivo especificar sistemas de comunicação multimídia em redes baseadas em pacotes, que não fornecem QoS (\textit{Quality of Service}) garantida. Ainda estabelece padrões tanto de codificação como descodificação de fluxos de dados de áudio e vídeo, garantindo que um fabricante que utiliza o padrão H.323 em seu produto interopere com produtos de outro fabricante que também utilize o H.323 \cite{thiagowinkler2007}.
+
+Em relação a aspectos relacionados a rede o padrão H.323 é completamente independente, logo pode ser utilizado em quaisquer  tecnologias de enlace, podendo optar tanto pelas lideres do marcado atual como a Ethernet, Fast Ethernet, FDDI (\textit{Fiber Distributed Data Interface}) ou mesmo a Tonken Ring. Ainda não possui qualquer tipo de restrição quanto a topologia da rede, podendo forma-se a uma ligação única ponto a ponto, ou um único segmento de rede, ou ainda serem complexas, envolvendo vários segmentos de rede \cite{eduardomaronasmonks2006}.
+
+O padrão H.323 especifica o uso de  áudio, video e de dados em comunicação, porém apenas o suporte a mídia de áudio é obrigatório, e cada mídia (áudio, vídeo e/ou dados), quando utilizada deve seguir as especificações do padrão. Pode-se ter uma variedade de formas de comunicação, como envolvendo apenas áudio, áudio e video, áudio e dados, ou áudio, vídeo e dados \cite{glauciadasilvaribeiro2011}.
+
+\subsubsubsection{Protocolo SIP}
+O SIP (\textit{Session Initiation Protocol}), é um protocolo de aplicação baseado em texto, padrão da IETF (\textit{Internet Engineering Task Force}) RFC 3261 (\textit{Request for Comments}), similar ao HTTP (\textit{Hyper Text Transfer Protocol}) que utiliza o modelo requisição/resposta, para iniciar sessões de comunicação interativa entre usuários. O protocolo SIP é utilizado para estabelecer chamadas e conferencias através de redes via IP. Uma chamada pode usar diferentes tipos de dados, incluindo áudio, vídeo e muitos outros formatos, ou seja, a configuração da sessão, mudança ou término é independente do tipo de mídia ou aplicação que é utilizada em uma chamada \cite{adrianoramosgoncalves2001}.
+
+A origem do protocolo SIP teve origem no ano de 1996, logo após o protocolo H.323 ser finalizado como padrão, porém o SIP teve uma rápida adoção como padrão para comunicações integradas e aplicações que usam presença\footnote{Presença significa a aplicação estar consciente da sua localização e disponibilidade}. O SIP levas os controles da aplicação para o terminal, eliminando a necessidade de uma central de troca.
+
+O SIP ao estabelecer ou terminar uma comunicação possui cinco passos básicos:
+\begin{itemize}
+  \item \textbf{Localização do Usuário,} determinar a localização do usuário na rede. Os usuários podem se mover para outros locais e acessar o seu telefone e uncionalidades de aplicações remotamente. Por exemplo, em uma rede corporativa o usuário receberá chamadas para o seu ramal não importando onde esteja dentro da empresa.
+  \item \textbf{Disponibilidade do Usuário,} verifica se o usuário deseja ou está, disponível para comunicação.
+  \item \textbf{Capacidade do Usuário,} determina os parâmetros e o formato da mídia a serem usados na sessão. A negociação dependerá da capacidade dos equipamentos envolvidos.
+  \item \textbf{Configuração da Sessão,} chamadas ponto a ponto ou em conferência devem ser estabelecidas, com os parâmetros negociados.
+  \item \textbf{Gerenciamento da Sessão,} incluem-se neste a transferência e terminação de sessões, a modificação de parâmetros da sessão e o carregamento de novos serviços.
+\end{itemize}
+
+O SIP é utilizado sobre o protocolo UDP por razões de desempenho, porém providencia seus próprios mecanismos de garantia de entrega. Caso necessário as mensagens SIP podem ser utilizadas de forma criptografadas sobre o protocolo TLS (\textit{Transport Layer Security}) ou através de tunelamento, com VPN (\textit{Virtual Private Network}) \cite{davidson2008}.
+
+A VPN ainda pode solucionar o problema do SIP quando há o emprego de NAT (Network Address Translator) em qualquer um dos lados, ou seja, tanto na rede do originador como do receptor da chamada, pois o SIP armazena os endereços de origem e destino dentro do campo de dados dos pacotes TCP/IP, já o NAT trata os endereços armazenados dentro da camada de rede dos pacotes. Logo a informação não é atualizada e, assim, os pacotes não contem os endereços corretos para a entrega dos pacotes aos cliente envolvidos \cite{alexandrekeller2014}.
+
+\subsubsubsection{Protocolo MGCP}
+O protocolo MCGP (\textit{Media Gateway Control Protocol}) do IETF teve como objetivo a integração da arquitetura SS7 (\textit{Signaling System 7}), onde esta é adotada em redes de sinalização na telefonia convencional, com redes IP, Frame Relay e ATM (\textit{Asynchronous Transfer Mode}) \cite{theodorewallingford2005}.
+
+A evolução do MCGP, é um trabalho em conjunto dos grupos do ITU-T e IETF, que resultou na recomendação H.248, também conhecida como Megaco (\textit{Media Gateway Control}), são utilizados nos gateways para controle da mídia e para permitir que um MGC (\textit{Media Gateway Controller}) controle um MG (\textit{Media Gateway}) \cite{theodorewallingford2005}.
+
+\subsubsubsection{Protocolo IAX}
+O IAX (\textit{Inter-Asterisk eXchange}), foi criado pela Digium, empresa mantedora do Asterisk, com o objetivo permitir a comunicação entre servidores Asterisk, é um protocolo aberto e já está na sua segunda versão o IAX2. A RFC publicou a sua padronização e homologação que é a RCF5456. É um protocolo que transporta a sinalização e mídia em uma única porta UDP/IP, a 4569, sendo sua configuração bem mais simples em comparação a outros protocolos, como SIP, H.323 e MCGP, especialmente quando a comunicação envolve NAT e ou Firewalls\footnote{Firewall é uma solução de segurança baseada em hardware ou software}. O IAX realmente não tem nenhuma dificuldade para a sinalização e transporte da mídia entre os pontos da conexão, e não faz uso de qualquer outro protocolo para resolver tais dificuldades \cite{alexandrekeller2014}.
+
+O IAX pode trafegar as informação também em modo trunk, que é a multiplexação dos pacotes de dados, ou seja, o áudio de várias chamadas é agrupado em um único conjunto de pacotes, em um único cabeçalho IP, reduzindo a latência, e ainda produzindo uma economia da utilização de banda da rede, pode ainda, utilizar de encriptação das chamadas utilizando chaves simetricas AES (\textit{Advanced Encryption Standart}), ou modo de autenticação com base em chaves criptografadas assimétricas, utilizando RSA (\textit{Rivest, Shamir e Adleman}).\cite{alexandrekeller2014}.
+
+\subsubsection{Protocolos de mídia}
+
+\subsubsubsection{Protocolo RTP}
+O protocolo RTP (\textit{Real-Time Transport Protocol}) é utilizado em redes fim a fim, adequado a  aplicações de tempo real, tais como áudio e video, sobre serviços de rede unicast ou multcast. O RTP define como é realizada a fragmentação do fluxo de dados, e a cada fragmento e adicionado informação de sequencia e de tempo de entrega, por utilizar o protocolo UDP, não garante a que os pacotes serão entregues num determinado intervalo, sua homologação é definida pelo RFC3550 \cite{henningcasnervan1996}.
+
+\subsubsubsection{Protocolo RTCP}
+O protocolo RTCP é baseado no envio periódico de pacotes de controle a todos os participantes da chamada, utilizando o mesmo mecanismo de distribuição dos pacotes de mídias. Os dados são transmitidos através de um controle mínimo, pois a transmissão acaba ocorrendo em tempo real usando o suporte dos pacotes UDP da rede IP, é um protocolo opcional, pois tem como função a transmissão periódica de pacotes de controle entre os participantes de uma conversação, com objetivo de verificar a qualidade do serviço e transporta informações úteis de tais participantes, é muito utilizado em aplicações de videoconferência \cite{henningcasnervan1996}.
+
+\subsection{\textit{Codecs} (Codificadores e Decodificadores)}
+Um codec é um algoritmo que faz a digitalização e a quantificação do sinal áudio e vídeo reduzindo o número de bytes gerados, logo diminui a banda necessária para a transmissão, e por ser digital é uma vantagem para transmissões em curtas e longas distancias, pois, mesmo sofrendo atenuação, perdas inerentes ao meio de propagação, e ação de ruídos, o processo de filtragem de ruídos é bem mais simples do que com os sinais analógicos, e antes da amplificação, o sinal é regenerado pelos repetidores \cite{eduardomaronasmonks2006}.
+
+As características dos \textit{codecs} influenciam diretamente na qualidade do áudio da chamada, a exemplo da ocupação de banda do codec G.711 que utiliza 64Kbps de banda, ou seja, que em cada pacote de dados transmitido 64 Kb do pacote de rede estão sendo ocupados apenas com o áudio da chamada, pois o G.711 não necessita de processamento porque não realiza nenhuma compressão de voz. Já o G.729a tem apenas 8Kbps de ocupação de banda, mas é necessário uma grande capacidade de processamento, pois comprime 8 vezes o áudio \cite{alexandrekeller2014}.
+
+A transcodificação é o processo de conversão de um codec em outro, por exemplo, de G.729a para G.711, isto causará o aumento no delay e na latência, logo poderá prejudicar a qualidade do áudio na chamada. O ideal é que todos os ramais do ambiente tenha a mesma implementação do codec \cite{alexandrekeller2014}.
+
+\subsection{Qualidade do áudio em VoIP}
+Uma exigência básica no VoIP é a qualidade do serviço, ou seja, chamadas com áudio de qualidade é dependente de fatores considerados críticos, pois o áudio foi digitalizado, comprimido, e dividido em pacotes para ser transmitido de um ponto a outro. Devido a natureza de redes de dados, alguns desses fatores podem ser: \cite{davidson2008}
+
+\begin{itemize}
+  \item \textbf{Perda de pacotes} ocorre normalmente dentro dos roteadores que encaminham os pacotes pela rede. Para que uma chamada VoIP não fique prejudicada não devem ocorrer perdas superiosres a 5\%.
+  \item \textbf{Delay} é o tempo decorrido desde a emissão do som na origem da chamada até a chegada do destino. Quanto maior o \textit{delay}, maiores as chances de a chamada ter a sua qualidade prejudicada.
+  \item \textbf{Latência ou atraso} é o intervalo de tempo em que um pacote sai de sua origem e chega ao seu destino, ou seja, o tempo que leva para viajar dentro da rede, desde a origem até o destino. Cada roteador em média adicionar 10 ms de latência à comunicação, para que a comunicação não seja prejudicada a latência deve ser inferior a 250 ms.
+  \item \textbf{Jitter} é a variação de tempo entre as chegadas de pacotes do endereço de origem ao seu destino, é ocasionado pelo excesso de tráfego ou baixa largura de banda, quanto maior a variação de tempo de tráfego dos pacotes, maior é o \textit{jitter}, o \textit{jitter} pode ocasionar distorção do áudio da chamada, e em cados mais extremos até mesmo o cancelamento da chamada.
+  \item \textbf{Eco} é o retorno da nossa própria voz, isso ocorre tanto na telefonia convencional como no VoIP, porém, ocorre muito rápido que acaba sendo imperceptível para os usuários, mas fatores como transcodificação de \textit{codecs}, \textit{gateways}, roteadores, \textit{switches}, largura de banda acabando contribuindo para que eco torne perceptível diminuindo a qualidade da chamada.
+\end{itemize}
+
+Há um fator positivo que é o QoS (\textit{Quality of Service}), que é um mecanismo de controle utilizado para priorizar diferentes fluxos de dados dentro da rede, com objetivo de garantir um nível de desempenho de uma aplicação ou programa específico, ou seja, organiza e prioriza os pacotes de uma aplicação como os pacotes de voz, minimizando sua perda dentro da rede. Um detalhe importante é que a implementação de QoS não aumentara a velocidade com que os pacotes trafegam, ele apenas os prioriza e organiza \cite{thiagowinkler2007}.
+
+\subsection{Arquiteturas}
+Para implementação do VoIP, existe três arquiteturas básicas, como a \textit{ponto a ponto}, que é mais simples delas, onde nesta arquitetura os terminais fazem uso de \textit{softfones}, telefones IP ou clientes de serviços conhecidos, como \textit{Skype} ou \textit{Jabber} onde conectam-se diretamente entre si, como é demonstrado pela figura \ref{Figura9} \cite{thiagowinkler2007}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=16.0cm]{imagens/pontoaponto.jpg}
+	\caption{Arquitetura Ponto a Ponto.}
+    \label{Figura9}
+    Fonte: \cite{eduardomaronasmonks2006}
+\end{figure}
+
+Outra arquitetura é de \textit{gateway}, que integra os serviços de telefonia convencional com a de VoIP, é utilizada para trafegar as ligações através de serviços VoIP sem modificar o serviço de telefonia convencional nos terminais, como demonstrado pela figura \ref{Figura10}. Logo o trafego de ligações entre ligações entre as localidades conectadas com gateways, não será roteado pela rede de telefonia convencional. Essa arquitetura é muito utilizada em empresas ou instituições separadas geograficamente, que aproveitam a estrutura de enlace de dados para fazer o reteamento das chamadas entre as unidades sem passar pela rede de telefonia convencional, economizando no custo das ligações telefônicas \cite{eduardomaronasmonks2006}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=16.0cm]{imagens/gateway.jpg}
+	\caption{Arquitetura Gateway.}
+    \label{Figura10}
+    Fonte: \cite{eduardomaronasmonks2006}
+\end{figure}
+
+Por fim, temos a híbrida, que originador da chamada pode estar em uma rede de dados e o destinatário numa rede de telefonia convencional, ou vice-versa, ou mesmo tanto originador como o destinatário numa rede de dados, ou ainda ambos numa rede de telefonia convencional sendo o tráfego transferido através de uma rede de dados como demonstrador pela figura\ref{Figura11}. Portanto, devem haver conversões de codificadores e a numeração deve corresponder a numeração utilizada na rede de telefonia convencional, pois os usuários de VoIP devem originar e receber ligações tanto da rede de dados como da rede telefonia convencional \cite{eduardomaronasmonks2006}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15.0cm]{imagens/hibrida.jpg}
+	\caption{Arquitetura Híbrida.}
+    \label{Figura11}
+    Fonte: \cite{eduardomaronasmonks2006}
+\end{figure}
+
+\subsection{Equipamentos}
+Terminais, sistemas de controle e gateways são os equipamentos utilizados nas arquiteturas de VoIP. As funções realizadas pelo sistemas de controle recebem diferentes nomenclaturas e diferem em funcionalidades \cite{theodorewallingford2005}.
+
+Os as funções dos terminais se resume em coletar a voz, codificar e transmiti-la. Obedecem a protocolos e recomendações de sinalização de chamadas. Podem ser a nível de \textit{hardware} ou \textit{software}. Os terminais possuem recursos como a configuração de \textit{codecs}, amostras de áudio por pacote, VAD\footnote{Detecta ausência de som em uma chamada, e não transmite esses pacotes de áudio com silêncio pela rede.} (\textit{Voice Activity Detection}) e tamanho de \textit{jitter} \cite{davidson2008}.
+
+Os telefones IP, são exemplo de terminais em \textit{hardware}, existe diversos tipos de telefones IP, que são compatíveis com praticamente todos os protocolos de sinalização, inclusive protocolos proprietários.
+
+Os \textit{softfones}, são exemplos de terminais em \textit{software}, possuim mais funcionalidades que os telefones IP, como maior números de tipos de codecs, maior capacidade de agenda e integração \textit{browsers}\footnote{Browser ou navegador é um programa desenvolvido para permitir a navegação pela internet}, são compatíveis com praticamente todos os protocolos de sinalização, inclusive protocolos proprietários. Interagem com o usuário através de microfone, fones de ouvido e placas de som com capacidade \textit{full-duplex}\footnote{Quando há um dispositivo Transmissor e outro Receptor, sendo que os dois podem transmitir dados simultaneamente em ambos os sentidos}, em uma estação de trabalho (computador), seu custo e bem inferior ao um telefone IP, incluse a \textit{softfones} gratuitos como ekiga \cite{glauciadasilvaribeiro2011}.
+
+As centrais tem a finalidade de controlar e gerenciar as chamadas entre os terminais. Podem ser equipamentos como PABX IP, ou software gratuitos como o Asterisk, que podem ser instalados em um computador o qual pode ser empregado e possuir funcionalidades de PABX IP. Emprega funções de tarifação e distribuição automática de chamadas, políticas de uso, redirecionamento de chamadas, caixa postal, menu interativo e etc. \cite{alexandrekeller2014}.
+
+Os \textit{gateways} ou ATA (\textit{Analog Telephone Adapter)}, tem como função converter a sinalização e mídia das chamadas entre a rede convencional de telefonia e o VoIP, os adaptadores conhecido como ATA, tem a finalidade de de adaptar os telefones analógicos para serem utilizados com VoIP, sendo que a inteligencia da comunicação está inserida no ATA, tendo o telefone como a interface com o usuário \cite{eduardomaronasmonks2006}.
+
+
+\subsection{Principais benefícios do VoIP}
+Uns dos principais benefícios do VoIP é a redução de custo nas chamadas, mais é relativo, pois dependente da quantidade, duração e localidade das chamadas, podendo ser locais, interurbanas ou mesmo, internacionais. Outro fator positivo é infraestrutura única para transportar os dados e a voz,  reduzindo os custos de instalação e manutenção da infraestrutura, bem como, a mobilidade pois o acesso não precisa ser necessariamente em apenas
+um único telefone ou computador, e a facilidade de integração com outras aplicações de dados e vídeo. \
+
+\section{Asterisk}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
