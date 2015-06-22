@@ -312,13 +312,30 @@ Os \textit{gateways} ou ATA (\textit{Analog Telephone Adapter)}, tem como funç�
 
 \subsection{Principais benefícios do VoIP}
 Uns dos principais benefícios do VoIP é a redução de custo nas chamadas, mais é relativo, pois dependente da quantidade, duração e localidade das chamadas, podendo ser locais, interurbanas ou mesmo, internacionais. Outro fator positivo é infraestrutura única para transportar os dados e a voz,  reduzindo os custos de instalação e manutenção da infraestrutura, bem como, a mobilidade pois o acesso não precisa ser necessariamente em apenas
-um único telefone ou computador, e a facilidade de integração com outras aplicações de dados e vídeo. \
+um único telefone ou computador, e a facilidade de integração com outras aplicações de dados e vídeo \cite{djaneelmajoanine2007}.
 
 \section{Asterisk}
+O Asterisk é a implementação de uma central telefônica PBX (\textit{Private Branch eXchange}) em software. Seu nome vem do símbolo (*), muito utilizado na telefonia. Foi desenvolvido por Mark Spencer em dezembro de 1999 e distribuído livremente pela sua empresa \textbf{Digium}, sobre a licença GPL (\textit{GNU General Public License}). Devido a isso, logo obteve um número expressivo de utilizadores e programadores contribuindo para o desenvolvimento da ferramenta, seja testando e reportando eventuais defeitos no sistema ou adicionando novas funcionalidades. Seu desenvolvimento se deu originalmente para o sistema operecional Linux, mas atualmente pode ser instalado e executado em praticamente todos os sistemas operacionais, incluindo o NetBSD, OpenBSD, FreeBSD, Mac OS e até mesmo no Windows. \cite{alexandrekeller2014}
 
+É uma ferramenta que executa todas as funções de uma central telefônica convencional, como URA\footnote{Unidade Respondível Audível.}, correio de voz, salas de conferencia, distribuição automática de chamadas, música em espera, captura, transferência, estacionamento, gravação de chamadas, entre outras, e, caso seja necessário, novas funcionalidades podem ser acrescentadas pelo próprio plano de discagem do Asterisk, módulos customisados escritos em lingugem C ou ainda por meio de \textit{scripts}\footnote{Script é um texto com uma série de instruções escritas para serem seguidas.} escrito em AGI (\textit{Asterisk Gateway Interface}). Outras informações e estastisticas interessantes sobre o Asterisk são: \cite{alexandrekeller2014}
 
+\begin{itemize}
+  \item Mais de 1.000.000 de downloads em 2007.
+  \item Mais de 1.500.000 de downloads em 2008.
+  \item Mais de quatro milhões de servidores instalados e rodando o Asterisk.
+  \item Aproximadamente 56.000 fóruns ativos.
+  \item Mais de 17.700 lista de discussão sobre o Asterisk.
+  \item Aproximadamente 400 colaboradores no projeto.
+  \item Mais de 200 provedores de VoIP em todo o mundo utilizando o Asterisk.
+\end{itemize}
 
+\subsection{Módulos}
+Os módulos que compõem o Asterisk são: \cite{books/daglib/0018909}
 
+\begin{itemize}
+  \item \textbf{Asterisk,} contém as funções, aplicações, canais de comunicação e todas as funcionalidades do Asterisk.
+  \item \textbf{Asterisk-AddOns,} módulos adicionais ao Asterisk, que não seguem a licença GPL, como funcionalidades de conexão ao servidor MySQL, formato de áudio MP3 e o canal de comunicação com o protocolo H.323. Na versão 1.8 do Asterisk esses módulos foram incorporados ao pacote principal.
+\end{itemize}
 
 
 
