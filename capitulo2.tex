@@ -286,7 +286,7 @@ Outra arquitetura é de \textit{gateway}, que integra os serviços de telefonia 
     Fonte: \cite{eduardomaronasmonks2006}
 \end{figure}
 
-Por fim, temos a híbrida, que originador da chamada pode estar em uma rede de dados e o destinatário numa rede de telefonia convencional, ou vice-versa, ou mesmo tanto originador como o destinatário numa rede de dados, ou ainda ambos numa rede de telefonia convencional sendo o tráfego transferido através de uma rede de dados como demonstrador pela figura\ref{Figura11}. Portanto, devem haver conversões de codificadores e a numeração deve corresponder a numeração utilizada na rede de telefonia convencional, pois os usuários de VoIP devem originar e receber ligações tanto da rede de dados como da rede telefonia convencional \cite{eduardomaronasmonks2006}.
+Por fim, temos a híbrida, que originador da chamada pode estar em uma rede de dados e o destinatário numa rede de telefonia convencional, ou vice-versa, ou mesmo tanto originador como o destinatário numa rede de dados, ou ainda ambos numa rede de telefonia convencional sendo o tráfego transferido através de uma rede de dados como demonstrador pela figura \ref{Figura11}. Portanto, devem haver conversões de codificadores e a numeração deve corresponder a numeração utilizada na rede de telefonia convencional, pois os usuários de VoIP devem originar e receber ligações tanto da rede de dados como da rede telefonia convencional \cite{eduardomaronasmonks2006}.
 
 \begin{figure}[h]
 	\centering
@@ -334,8 +334,88 @@ Os módulos que compõem o Asterisk são: \cite{books/daglib/0018909}
 
 \begin{itemize}
   \item \textbf{Asterisk,} contém as funções, aplicações, canais de comunicação e todas as funcionalidades do Asterisk.
-  \item \textbf{Asterisk-AddOns,} módulos adicionais ao Asterisk, que não seguem a licença GPL, como funcionalidades de conexão ao servidor MySQL, formato de áudio MP3 e o canal de comunicação com o protocolo H.323. Na versão 1.8 do Asterisk esses módulos foram incorporados ao pacote principal.
+  \item \textbf{Asterisk-AddOns,} módulos adicionais ao Asterisk, que não seguem a licença GPL, como funcionalidades de conexão ao servidor MySQL, formato de áudio MP3 e o canal de comunicação com o protocolo H.323. Na a partir da versão 1.8 do Asterisk esses módulos foram incorporados ao pacote principal.
+  \item \textbf{Zaptel/DAHDI,} contém os drivers de todas as placas Digium, e de outras fabricantes. Em decorrência de problemas de patente, o nome Zaptel foi renomeado para DAHDI (\textit{Digium Asterisk Hardware Device Interface}), desde agosto de 2008.
+  \item \textbf{LibPRI,} biblioteca responsável pela sinalização ISDN/PRI. Necessária sua instalação quando da utilização de uma placa de comunicação digital E1/T1 e sinalização ISDN/PRI.
+  \item \textbf{LibSS7,} biblioteca responsável pela sinalização ISUP/SS7. Incorporada ao Asterisk em 2010.
+  \item \textbf{LibOpenR2,} biblioteca responsável pela sinalização MFC/R2. Incorporada ao Asterisk em 2010, a partir da versão 1.6.2, pois antes era necessário a utilização de patches\footnote{Patches, são correções ou aumento de funcionalidades de um software (programa de computador).} de correção ao Asterisk para ativar as funções associadas a esse sinalização.
 \end{itemize}
+
+\subsubsection{Questões de Hardware}
+O Asterisk não possui um DSP (\textit{Digital Signal Processor}) dedicado a cada canal de voz, logo, utiliza o CPU do servidor para processar os canais de voz, fazendo com que o sistema fique muito dependente da performance da CPU, porém, permitiu que o custo fosse reduzido para as placas E1/T1 \cite{flavioeduardoandredade2005}.
+
+Dimensionar e especificar o servidor ideal ao protejo, é problema recorrente até mesmo aos mais experientes consultores de Asterisk, pois precisam avaliar com muita precisão todos os detalhes do ambiente em questão. Porém para que o ambiente seja o mais próximo da realidade possível, é necessário responder algumas questões como: \cite{alexandrekeller2014}
+
+\begin{itemize}
+  \item Quantas chamadas simultâneas são previstas para o ambiente?
+  \item Haverá gravação das chamadas de entrada e saída?
+  \item Haverá a implementação de terminação de chamadas em algum provedor VoIP? Se sim, a quantidade de chamadas simultâneas previstas?
+  \item Qual a largura de banda da internet disponível para a comunicação via VoIP com provedores.
+\end{itemize}
+
+Os processos que mais consomem processamento é a transcodificação, e a gravação de chamadas em discos. A Digium orienta que, para a transcodificação de 120 chamadas simultâneas entre os codecs G.711 e G729a, é necessário um servidor Intel Xeon 3.0 Ghz com 4 GB de memória RAM. Mas com as questões levantadas, e respondidas de maneira apropriada, pode-se especificar a CPU, sistema de armazenamento de arquivos e a quantidade de memória adequada para o ambiente. \cite{alexandrekeller2014}
+
+\subsubsection{Arquitetura do Asterisk}
+O Asterisk é uma ferramente híbrida que executa todas as funções de um PABX, utilizando as principais tecnologias de comunicação existente no mercado, mas em sua arquitetura básica de funcionamento, é necessário quatro componentes, demonstrado pela figura \ref{Figura12}, sendo eles: \cite{books/daglib/0018909}
+
+\begin{itemize}
+  \item \textbf{Protocolo,} que realiza á comunicação dos usuários com o servidor Asterisk.
+  \item \textbf{Canal de comunicação,} todo cliente possui sua identificação, assim como todo cliente necessita de um protocolo para comunicação, a junção da identificação com o protocolo forma o canal de comunicação.
+  \item \textbf{\textit{Codecs},} conversão do sinal analógicos em digital, e posteriormente como é realizado o seu transporte dentro da rede.
+  \item \textbf{Aplicaçao,} para conectar as chamadas de entrada com as de saída, ou outros usuários do Asterisk, são utilizadas diversas aplicações como \textit{Dial()} e \textit{VoiceMail()}.
+\end{itemize}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=9cm]{imagens/arquiteturaAsterisk.jpg}
+	\caption{Arquitetura do Asterisk.}
+    \label{Figura12}
+    Fonte: \cite{flavioeduardoandredade2005}
+\end{figure}
+
+O Asterisk possui funções de PABX de forma integrada, onde um único servidor implementas todas as funções ou em servidores separados, demonstrador pela figura \ref{Figura13}, de acordo com dimensionamento do ambiente em questão. \cite{djaneelmajoanine2007}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=7.5cm]{imagens/servidoresAsterisk.jpg}
+	\caption{Múltiplos servidores do Asterisk.}
+    \label{Figura13}
+    Fonte: \cite{flavioeduardoandredade2005}
+\end{figure}
+
+Na figura \ref{Figura14}, é demonstrado um exemplo de PABX de tronco de linha. É um dos sistemas mais simples para empregar o Asterisk. \citeonline{davidson2008} define PABX como, equipamento centralizador de linhas e ramais, também conhecido por central telefônica, que permite a comunicação interna (através de ramais) e facilita  a comunicação externa (linhas telefônicas fixas). 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=7.5cm]{imagens/PABXAsterisk.jpg}
+	\caption{PABX de Tronco.}
+    \label{Figura14}
+    Fonte: \cite{flavioeduardoandredade2005}
+\end{figure}
+
+O PABX poder ser analógico, onde possui circuitos e componentes analógicos, projetados para receber linhas fixas convencionais através das operadoras de telefonia fixa, sua utilização é básica, com alguns recursos como bloqueio de ligações a cobrar e senha nos ramais. Ou pode ser digital, que melhora a qualidade das ligações eliminando ruídos e aumentando o volume do áudio, dispõe de DDR (\textit{Discagem Direta Ramal}) e entrocamento E1. Ou ainda hibrido, onde agrega o melhor das das tecnologias analógica e digital, e implementa a tecnologia VoIP, permitindo interligar filias a custo zero, demonstrado pela figura \ref{Figura15}, reduzindo assim custo, já que depois de configurada ela escolha a rota de menor custo para ligar, dependendo de cada tipo de chamada.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=10cm]{imagens/matrizFiliaisAsteirsk.jpg}
+	\caption{Interligação de matriz e filiais.}
+    \label{Figura15}
+    Fonte: \cite{flavioeduardoandredade2005}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
