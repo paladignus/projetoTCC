@@ -8,7 +8,7 @@ Em sociedade sempre necessitamos de serviços, sejam eles públicos ou privados,
 
 Os órgãos de segurança pública como qualquer empresa ou instituição necessitam do sistema de telefonia para sua própria comunicação interna ou externa, bem como atender por meio de números emergenciais como, por exemplo, o número emergencial 190 da Polícia Militar.
 
-Um cidadão que efetua uma ligação para um número emergencial de um órgão de segurança pública necessita de um atendimento de emergência. Desse modo, as linhas emergenciais devem estar disponíveis 24 horas por dia, isto é, não devem haver linhas defeituosas, congestionadas ou comprometidas, seja por falha técnica ou humana. No entanto, essas falhas existem.
+Um cidadão ao efetuar uma ligação para um número emergencial, precisa ser atendido com eficiência. Desse modo, as linhas emergenciais devem estar disponíveis 24 horas por dia, isto é, não devem haver linhas defeituosas, congestionadas ou comprometidas, seja por falha técnica ou humana. No entanto, essas falhas existem.
 
 No município de Dourados, o comandante Ary Carlos Barbosa do 3º Batalhão de Polícia Militar relata em um artigo jornalistico\footnote{http://www.douradosnews.com.br/dourados/populacao-reclama-do-nao-funcionamento-do-190-da-pm}:
 
@@ -18,15 +18,13 @@ No município de Dourados, o comandante Ary Carlos Barbosa do 3º Batalhão de P
 
 O problema relatado pelo comandante aparentemente é técnico, porém também pode se referir a uma falha humana, pois na mesma reportagem a autora \citeonline{eduardarosa2014} em seu artigo jornalístico descreve o depoimento de outras pessoas entrevistadas que disseram que tentaram por algumas vezes o atendimento e não conseguiram ser atendidas.
 
-Portanto, tendo como problema a reclamação da população do município de Dourados sobre as ligações feitas para o teleatendimento emergencial da Polícia Militar no município de Dourados, propõe-se neste trabalho proporcionar uma melhoria nesse teleatendimento através da utilização da tecnologia VoIP \textit{(Voice over Internet Protocol)}. 
+Uma maneira de melhorar o atendimento à população por meio de melhoria tecnológica é utilização por exemplo do VoIP. 
 
 A VoIP permite o tráfego de voz sobre redes de computadores, sendo possívelefetuar e receber ligações entre computadores, telefones comuns, telefones IP e celulares. Pode também ser utilizada como centrais de PABX \textit{(Private Automatic Branch eXchange)}, que podem ser substituídas por servidores de PABX IP \textit{(Private Automatic Branch eXchange Internet Protocol)} \cite{glauciadasilvaribeiro2011}.
 
 Embora a VoIP tenha melhorias por utilizar da rede de dados para trafegar voz, é inegável que a rede de telefonia convencional possui uma abrangência maior, com sua estrutura envolvendo todas as localidades do planeta. Essa é uma grande vantagem que a tecnologia empregada na rede de telefonia pública comutada (RTPC), em inglês PSTN \textit{(Public Service Telephony Network)} possui sobre a tecnologia de VoIP \cite{theodorewallingford2005}.
 
-Portanto, buscou-se uma ferramenta de licença gratuita que implemente uma central de telefonia híbrida o Asterisk. O Asterisk  permite conectividade em tempo real entre as redes PSTN e a tecnologia VoIP, ou seja, gerencia o áudio trafegando em canais de comunicação analógicos, digitais e também em redes TCP/IP \cite{alexandrekeller2014}.
-
-Existe outras ferramentas de licença gratuita com o mesmo propósito do Asterisk, porém estas são compilações de sistemas operacionais Linux já com Asterisk instalado, onde estas utilizam-se de recursos gráficos para a manipulação dos arquivos de configuração do Asterisk. Logo optou-se pelo Asterisk de forma nativa, pois além da compreensão da configuração desta, haverá o entendimento de sua instalação.
+Portanto, o Asterisk\footnote{Software de licença gratuita, disponibilizado pela empresa Digium.} é considerado uma central de telefonia híbrida, pois tem como beneficio o emprego da tecnologia de telefonia convencional, como a tecnologia VoIP, portanto, este trabalho tem como proposta, proporcionar uma melhoria no teleatendimento da Polícia Militar, utilizando a tecnologia VoIP por meio de uma central telefônica hibrida.
 
 % ================= Objetivos =================================
 \section{Objetivos}
@@ -51,8 +49,8 @@ Devido as constantes reclamações da população douradense sobre qualidade e f
 A metodologia envolveu as seguintes etapas:
 \begin{enumerate}
   \item Fundamentação teórica com estudos sobre a telefonia convencional, seu funcionamento, organização e infraestrutura, bem como, seus tipos de sinalização e estabelecimento de circuitos.
-  \item Descrever os conceitos gerais sobre VoIP, seu histórico, tipos de redes, protocolos utilizados tanto na sinalização como na transmissão, vantagens, desvantagens e segurança para aplicação desta tecnologia.
-  \item Apresenta detalhes da ferramenta escolhida, o Asterisk, bem como, suas funcionalidades de musica em espera, transferência, captura, estacionamento e gravação de chamadas e salas de conferencia.
+  \item Descrever os conceitos gerais sobre VoIP, seu histórico, tipos de redes, protocolos utilizados tanto na sinalização como na transmissão e principais benefícios ao empregar esta tecnologia.
+  \item Apresenta detalhes da ferramenta escolhida, o Asterisk, bem como, suas funcionalidades, os módulos necessários para sua utilização, questão de hardware e sua arquitetura.
   \item Avaliar as principais falhas técnicas apontadas pelos atendentes e observadas no período de permanência no teleatendimento emergencial da Polícia Militar, bem como, realizar a análise de requisitos necessários para a aplicação do protótipo do servidor VoIP.
   \item Relatar a aplicação, configurações e os testes do protótipo ao ser empregrado no teleatendimento, e apresentar as considerações sobre os resultados obtidos.
 \end{enumerate}
@@ -61,7 +59,7 @@ Detalhando a metodologia, tem-se na primeira etapa, a fundamentação teórica. 
 
 	Na segunda etapa, descrevera sucintamente o início, motivação, evolução da tecnologia VoIP, bem como, seus protocolos utilizados tanto na sinalização como a transmissão da voz em redes TPC/IP, consequentemente na internet, ainda como vem sendo empregada, utilizada, bem como, esta tecnologia vem agregando cada vez mais serviços a um sistema de telefonia, porém com uma pequena limitação se comparada a VoiP com a telefonia convencional, nas questão de estrutura física, mas fornecendo segurança na transmissão das chamadas.
 
-	Na  terceira etapa, relatara as funcionalidades da ferramenta eleita, bem como, alguns recursos avançados desta, e como essa ferramenta agregara valor ao ambiente de telefonia escolhido para o seu emprego, que é o teleatendimento da Polícia Militar de Dourados.
+	Na  terceira etapa, relatara as funcionalidades da ferramenta eleita, bem como, alguns recursos avançados desta, e como essa ferramenta agregara valor ao ambiente de telefonia para o seu emprego.
 
 	Na quarta etapa, mostrara, os resultados, ou seja, as falhas técnicas, ou mesmo humanas apresentados pelos atendentes através do emprego do questionário, bem como, pelo período de permanência para mapear o fluxo operacional e realizar à analise de requisitos para o emprego e configuração da ferramenta com eficiência e qualidade no teleatendimento.
 
