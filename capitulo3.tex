@@ -1,0 +1,97 @@
+%========================= CAPITULO 3 ==============================
+
+\chapter{Falhas e Análise de Requisitos} %\label{cap_exemplos}
+%\thispagestyle{empty}
+\section{Falhas Apontadas e Obervadas}
+Com aplicação do questionário e o com o período de permanecia do teleatendimento da Polícia Militar de Dourados, ficou evidente algumas falhas técnicas e mesmo humanas neste teleatendimento.
+
+\subsection{Falhas Humanas}
+Apesar das falhas humanas não serem objetos de estudo deste trabalho, não deixam de ser um fator preocupante para a eficiência do teleatendimento. E ainda esta falhas humanas acabam relacionando-se indiretamente ou diretamente com algumas falhas técnicas que serão apontadas.
+
+Uma falha humana verificada foi com relação aos PA (\textit{Pontos de Atendimentos}), ou seja, quando um atendente por algum motivo necessita se ausentar de sua cabine de atendimento e porventura acaba esquecendo de desabilitar o seu PA, isso gera um transtorno para o solicitante pois, a ligação deste solicitante acaba caindo neste PA com o atendente ausente, só que para o solicitante que esta em uma situação urgência, emergência esta sendo gerado tom de chamada, e como consequência ele não é atendido.
+
+Outra falha que coexiste com a anterior, é o fato que o outro atendente tem que se levantar de sua cabine de atendimento, seja para atender a chamada de seu colega de trabalho ou mesmo derrubá-la, ou seja, desabilitar o PA do colega enquanto ocorre uma chamada de um solicitante ou ignorá-la, deixar tocar até dar tom de ocupado para o solicitante.
+
+E os atendentes além de terem que atender as chamadas, ainda tem que ser despachadorores, ou seja, despachar as ocorrências com as viaturas, e nesse momento outra chamada é recebida no PA deste atendente e o mesmo fica impossibilitado de atender esta chamada devido a estar passando as informações da solicitação anterior para a viatura, logo ele ignora ou derruba a chamada.
+
+A ferramenta Asterisk tem funcionalidades técnicas como DAC (\textit{Distribuição Automática de Chamadas}) ou captura de chamadas para amenizar ou mesmo cessar as falhas humanas apresentadas.
+
+A funcionalidade conhecida como DAC ou filas de atendimento, é a maneira que o Asterisk enfileira as chamadas de entrada do servidor, para que posteriormente seja encaminhadas para os agentes de atendimento \cite{flavioeduardoandredade2005}.
+
+Esta funcionalidade geralmente é empregada em call centers. E existem dois tipos de call centers, os ativos que originam chamadas para o cliente externo oferecendo planos, promoções, etc, e os receptivos, pois trata apenas de chamadas de entrada no sistema, logo o teleatendimento da Polícia Militar se encaixa nesta segunda abordagem. A DAC trás inúmeras vantagens para o teleatendimento, pois organiza as ligações de entrada, e ainda pode-se configura os atendente para logar-se no servidor PABX, e caso se necessário pode definir um tempo em segundos de inatividade para os atendentes e o próprio servidor coloca este atendente como impossibilitado de atender uma chamada \cite{alexandrekeller2014}.
+
+Captura de chamadas permite que o atendente puxe para seu ramal uma chamada de outro atendente no qual seu ponto de atendimento esta tocando, e captura de chamada poder ser em grupo onde os atendentes pertence ao mesmo grupo, porém, apenas funciona para canais de comunicação com o mesmo protocolo, ou seja, um canal de comunicação SIP, só pode captura chamadas de canais de comunicação definidos com SIP. E a captura de chamada também pode ser direta onde o atendente pode capturar a chamada diretamente discando o número do ramal que se deseja capturar. Esta funcionalidade evita que o atendente tenha que se levantar ou deslocar de sua cabine de atendimento para atender uma PA de outro atendente que esteja tocando \cite{alexandrekeller2014}. 
+
+\subsection{Falhas Técnicas}
+As falhas humanas apresentadas, também podem ser consideradas falhas técnicas, pois, no atual momento deste teleatendimento não há nenhuma ferramenta para inibir ou mesmo cessar as falhas identificadas como humanas, porém como demonstrado com as funcionalidades da ferramenta Asterisk podemos saná-las.
+
+A falta de um controle de agentes é uma falha técnica, pois, não nenhum controle de quando o atendentes ficaram disponíveis para o atendimento das chamadas ou mesmo indisponíveis.
+
+Não há nenhum controle das ligações, ou seja, quanto atendimentos diários foram realizados, quantas desses atendimentos eram realmente ocorrências, quantos eram trotes, pedidos de informação, não há possibilidade do levantamento de estatísticas das ligações recebidas.
+
+Logo não há gravação do áudio das chamadas, isto gera um transtorno tanto para os atendentes como para os cidadãos, pois, caso ocorra uma reclamação contra um atendente, não há como verifica como procedeu o atendimento. E ainda não há uma identificação desta chamadas, mas comumente conhecido como bina, que nada mais é que um serviço telefônico que permite ao assinante chamado identificar o número do terminal originador da chamada.
+
+Outro fator preocupante é a falta da possibilidade de transferência de chamadas entre os atendentes, pois, foi verificado que é comum um cidadão retornar a ligação, seja para complementar a solicitação, passar ou repassar algumas informações relevantes para o atendimento, ou mesmo para reportar alguma reclamação, e fica evidente que geralmente o solicitante quer e precisar falar com o mesmo atendente, porém isso se torna oneroso para os atendentes pois para atender esse solicitante o atendente precisa sair de sua cabine de atendimento e deslocar até a cabine de atendimento onde esta atendendo este solicitante, logo, ficam indisponíveis dois atendentes, pois o atendente precisar colocar seu PA como inativo e o outro atendente fica ocioso, pois este tem que aguarda o termino do atendimento que esta ocorrendo na sua cabine de atendimento.
+
+No teleatendimento, não há uma organização dos ramais, ou seja, não tem como identificar os ramais e os atendentes que estão atendendo neles, ainda há uma deficiência com relação ao recebimento das chamadas nos ramais, pois, o primeiro ramal sempre recebera mais ligações do os outros ramais, pelo fato que não tem inteligencia nos ramais, logo se o primeiro ramal tiver desocupado, uma ligação cairá neste ramal, somente quando este estiver ocupado passará para o segundo ramal, isso segue sucessivamente.
+
+Não tem uma padronização no atendimento, ou seja, não há uma mensagem inicial no primeiro contato como uma mensagem de boas vindas do tipo “polícia militar”, para identifica de qual órgão de segurança pública se trata, isto se faz necessário, pois, alguns cidadãos confundem os números emergenciais dos órgãos de segurança públicas.
+
+Os equipamentos utilizados no teleatendimento da Polícia Militar são de uso continuo, ou seja, já tem longa data de utilização, e muitos estão apresentando defeitos e avarias, e fica evidente a falta de manutenção ou mesmo a troca devido seu valor elevado.
+
+Assim como nas falhas humanas a ferramenta Asterisk tem funcionalidades como a própria DAC, gravação de chamadas, transferência de chamadas ou teleconferência e bilhetagem para amenizar ou cessar as falhas técnicas deste teleatendimento.
+
+A DAC além de auxiliar nas falhas humanas apresentadas anteriormente, pode auxiliar no controle dos atendentes, pois, estes terão que autenticar-se no sistema para poderem atenderem as chamadas, e com auxilio de outra funcionalidade que é a bilhetagem podemos ter todas informações de autenticação dos usuários, bem como, controle de todas as informações das chamadas, identificação da chamada, tempo médio de espera, tempo médio de atendimento, quantidade chamadas abandonadas, ou seja, aquelas que o cidadão desistiu, e ainda criar estrategias de atendimento para os atendentes, ou seja, a chamada vai cair para o atendente que esta mais tempo sem atender uma chamada, aquele que não concretiza um atendimento, aleatoriamente entre outras \cite{books/daglib/0018909}.
+
+A DAC ainda permite uma padronização do atendimento, pois pode ser configurado uma URA, com uma mensagem de boas bindas, identificando o órgão de segurança pública, e caso tenha pelo menos um atendente disponível transfere a chamada para ele, caso tenha mais de um, utiliza uma das estrategias de atendimento mencionados no paragráfo anterior, e não havendo nenhum, cai direto na fila de atendimento, e pode informar com uma mensagem automatica o posição o qual se encontra na fila, ou seja, quantos estão a sua frente aguardando o atendimento e ou ainda colocar uma musica em espera \cite{flavioeduardoandredade2005}.
+
+Bilhetagem é o armazenamento de todas as informações de todas as chamadas executadas ou recebidas, podem ser simplesmente arquivos de texto simples ou ainda serem armazenados em banco de dados externos como MySQL ou Postgresql através de ODBC (\textit{Open Database Connectivity})\footnote{Padrão aberto de conectividade com praticamente qualquer banco de dados disponível}. Porém bilhetagem não tarifação, tarifação e a cobrança de custos das ligações \cite{alexandrekeller2014}.
+
+A gravação da chamadas podem ser a nível de atendente ou não própria configuração da fila, e ainda pode ser implementada de duas formas, sendo por meio de aplicação onde toda chamada e gravada e não existe a possibilidade de interrompê-la, ou sobre demanda que só inicia a gravação por intermédio da digitação de um comando digitado. Saliente informar que a gravação esta entre as funcionalidades que mais consomem recursos, pois dependem da velocidade do disco utilizado \cite{alexandrekeller2014}.
+
+Outra vantagem da ferramenta Asterisk e com relação ao equipamento, pois pode ser empregado ATA's, telefones analógicos comuns através de uma placa FXS instalada no servidor PABX ou ainda softfones instaladas no próprios computadores dos atendentes e nesta ultima opção necessita apenas de um headfone para comunicação, porém este ainda tem um preço bem mais atrativo que os headsets, logo sua manutenção, reparo ou mesmo troca terá um custo mais baixo.
+
+\section{Requisitos Necessários}
+A ferramenta Asterisk faz o elo de ligação entre a PSTN e o VoIP, ou seja, é considerada um servidor PABX híbrido. Mas para essa finalidade ela necessita de requisitos para sua implantação, logo, sera abordado os requisitos necessários para aplicar a ferramenta Asterisk no cenário escolhido, que é o teleatendimento emergencial da Polícia Militar de Dourados.
+
+\subsection{Telefônia}
+No teleatendimento existem quatro ramais analógicos administrados pela operadora de telefonia, que chegam no quadro de distribuição através de cabo FE\footnote{Fio telefônico para instalações aéreas} e posteriormente e distribuídos até os PA dos atendentes.
+
+Para a ferramenta fazer a integração da telefonia convencional com o VoIP, foi adquirido uma placa TDM410P 4 portas FXO (\textit{recebe tom de discagem}) para conexão com os atuais ramais analógicos do teleatendimento, porém, a ferramenta disponibilizará internamente os ramais por meio da LAN, ou seja, por intermédio do VoIP, logo, este teleatendimento contará com todas as funcionalidades da ferramenta Asterisk. A placa é ilustrada através da figura \ref{Figura16}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=8cm]{imagens/tdm410p.jpg}
+	\caption{Placa TDM410P 4 portas.}
+    \label{Figura16}
+\end{figure}
+
+\subsection{Rede de Computadores}
+A LAN (\textit{Local Area Network}) ou rede de computadores local deve receber uma atenção especial desde o momento do projeto para a implementação de serviços com base VoIP, pois, a qualidade do áudio trafegado é afetado por fatores diretamente ligados à rede como o tamanho da banda, latência e jitter \cite{andersonramires2005}.
+
+A rede de computadores do teleatendimento é composta por cabos de par trançado de categoria 5, e é interligada através de switch central com barramento 10/100 de 24 portas, e nas estações de trabalho (\textit{computadores}) o barramento das placas ethernet (\textit{placa de rede}) é de 10/100. A ilsutração do switch interlingando as estações de trabalho pode ser vista através da figura \ref{Figura17}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=8cm]{imagens/switch.png}
+	\caption{Conexão entre o switch e as estações de trabalho.}
+    \label{Figura17}
+\end{figure}
+
+\subsection{Hardware}
+A teleatendimento não possui um computador exclusivo para a ferramenta Asterisk, então foi adquirido um computador com configurações razoáveis porém compatível com o cenário pretendido. O hardware foi escolhido acima do dimensionamento pretendido para o cenário, pois devido que o teleatendimento possui somente quatro ramais analógicos, logo poderá ter somente quatro chamadas simultâneas. \citeonline{alexandrekeller2014} expõe que a quantidade de chamadas simultaneas e se ira gravar as chamadas e velocidade do disco são fatores para dimensionamento correto do hardware. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=6cm]{imagens/gabinete.jpg}
+	\caption{Computador para o servidor PABX.}
+    \label{Figura18}
+\end{figure}
+
+\subsection{Software}
+O Asterisk nasceu no Linux\footnote{Linux é um termo utilizado para se referir a sistemas operacionais que utilizem o núcleo Linux}, logo, é onde tem todo o seu desenvolvimento baseado, e também onde esta sua maior base instalada, mesmo assim, é possível instalar o Asterisk em FreeBSD, OpenBSD, Solaris, Unix, Mac OS e Windows \cite{flavioeduardoandredade2005}.
+
+O sistema operacional\footnote{Um sistema operacional é um conjunto de programas básicos e utilitários que fazem seu computador funcionar} escolhido para a instalação da ferramenta Asterisk foi a ultima versão estável do GNU/Linux Debian. O Debian é um sistema operacional de distribuição não comercial e livre que usa o kernel Linux. A versão oito do Debian com codinome Jessie é sua ultima versão estável, os desenvolvedores do Debian sempre homanegencia suas versões com nomes dos personagens do filme Toy Story\footnote{Toy Story é um filme estadunidense de aventura e comédia de 1995. É conhecido por ser o primeiro longa-metragem dos estúdios Pixar e também o primeiro da história totalmente feito por computação} \cite{valessiosoaresbrito2015}.
+
+Além de ser um sistema operacional de distribuição livre, o Debian é uma distribuição de alta qualidade, estável e escalável, que podem ser facilmente configurado para servir em vários papéis, desde firewalls dedicadas a ambientes de estações de trabalho científico e até servidores de rede de elevada gama, e é especialmente popular entre utilizadores mais avançados devido à sua excelência técnica e ao seu profundo compromisso com as necessidades e expectativas da comunidade Linux \cite{valessiosoaresbrito2015}.
+
