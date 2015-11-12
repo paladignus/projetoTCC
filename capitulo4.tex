@@ -8,10 +8,32 @@ A instalação do Asterisk requer e exige uma série de cuidados e detalhes,  pa
 Apesar de haver duas formas de instalação, onde pode ser por SVN\footnote{Sistema de controle de versão} que mantêm um compartilhamento do desenvolvimento do sistemas com todas as novas funcionalidades, porém ainda nem sempre devidamente testadas, logo optou-se por baixar os pacotes compactados sendo eles:
 
 \begin{itemize}
-  \item dahdi-linux-current.tar.gz \newline http://downloads.asterisk.org/pub/telephony/dahdi-linux/
+  \item dahdi-linux-current.tar.gz
   \item dahdi-tools-current.tar.gz
   \item libpri-1.4-current.tar.gz
-  \item openr2-1.3.3.tar.gz, obtido através do endereço: \newline https://code.google.com/p/openr2/downloads/list
+  \item openr2-1.3.3.tar.gz
   \item libss7-1.0.2.tar.gz
   \item asterisk-13-current.tar.gz
 \end{itemize}
+
+E podem ser obtidos respectivamente nos seguintes endereços:
+
+\begin{itemize}
+  \item http://downloads.asterisk.org/pub/telephony/dahdi-linux/
+  \item http://downloads.asterisk.org/pub/telephony/dahdi-tools/
+  \item http://downloads.asterisk.org/pub/telephony/libpri/
+  \item https://code.google.com/p/openr2/downloads/list
+  \item http://downloads.asterisk.org/pub/telephony/libss7/
+  \item http://downloads.asterisk.org/pub/telephony/asterisk/
+\end{itemize}
+
+Após o download dos mesmo foram descompactados e compilados na  mesma ordem em foram baixados, pois, os modulos são independentes, ou seja, a compilação de um módulo reflete diretamente na compilação do outro, a exemplo que caso seja compilado o módulo do Asterisk antes do módulo LIBPRI, a compilação do Asterisk não reconhecerá as funções habilitadas pelo pacote LIBPRI.
+
+Após a instalação do Asterisk algumas pastas e arquivos são criados por ele para sua respectiva configuração e armazenamento das informações, pois o Asterisk é dividido em módulos, cada um representando uma funcionalidade como aplicação, função, canal de comunicação, protocolo e outros, e para correta configuração destas funcionalidades e necessário correta construção e configuração destes arquivos, e no decorrer do projeto, serão abordados os arquivos de configuração pertinentes para a correta construção do protótipo para ser testado no teleatendimento.
+
+\subsection{Protótipo}
+O protótipo consiste na construção de servidor PABX híbrido para o teleatendimento da Polícia Miltar de Dourados, onde será configurado as funcionalidades do Asterisk pertinentes a este teleatendimento, logo, será apresentado os arquivos com as configurações necessárias para esta finalidade.
+
+\subsubsection{Plano de Discagem}
+O plano de discagem define todo o funcionamento do servidor Asterisk, é onde define os grupos e regras de discagem, ou seja, como as chamadas de entradas e saída do servidor serão tratadas, e quais funcionalidades serão atividades e como funcionarão, o arquivo onde é programado o plano de discagem é o extensions.conf e fica localizado dentro da pasta /etc/asterisk/ \cite{alexandrekeller2014}.
+Na figura 18 podemos observar como ficou sua configuração para o ambiente escolhido.
