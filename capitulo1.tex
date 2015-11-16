@@ -36,9 +36,9 @@ Dado o domínio do teleatendimento emergencial da Polícia Militar de Dourados, 
 
 \begin{itemize}
 	\item Explorar o problema através de aplicação de questionários aos atendentes;
-	\item Ter o emprego de funcionalidades de PABX no teleatendimento.
-	\item Utilizar de um SGDB para armazenar as informações de todas as chamadas recebidas pela central telefônica.
-	\item Realizar levantamento estatístico dessas informações.
+	\item Realizar a análise de requisitos necessário do ambiente do teleatendimento para o emprego de uma servidor PABX híbrido.
+	\item Implementar um protótipo que empregue funcionalidades de PABX no teleatendimento.
+	\item Propiciar o armazenamento das informações de todas as chamadas recebidas pela central telefônica.
 \end{itemize}
 
 %================== Justifica\c{c}\~{a}o/Motiva\c{c}\~{a}o =====================
@@ -76,43 +76,24 @@ Detalhando a metodologia, tem-se na primeira etapa, a fundamentação teórica. 
 	\footnotesize
     \begin{tabular}{|c|c|c|c|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|p{0.05cm}|}
     \hline
-    \multicolumn{4}{|c|}{\textbf{Meses}} & \multicolumn{4}{c|}{\textbf{Fev}} & \multicolumn{4}{c|}{\textbf{Mar}} & \multicolumn{4}{c|}{\textbf{Abri}} & \multicolumn{4}{c|}{\textbf{Maio}} & \multicolumn{4}{c|}{\textbf{Junho}} \\ \hline
+    \multicolumn{4}{|c|}{\textbf{Meses}} & \multicolumn{4}{c|}{\textbf{Jul}} & \multicolumn{4}{c|}{\textbf{Ago}} & \multicolumn{4}{c|}{\textbf{Set}} & \multicolumn{4}{c|}{\textbf{Out}} & \multicolumn{4}{c|}{\textbf{Nov}} \\ \hline
     \multicolumn{4}{|c|}{\textbf{Etapas/Semanas}} &\tiny1 &\tiny2 &\tiny3 &\tiny4 &\tiny1 &\tiny2 &\tiny3 &\tiny4 &\tiny1 &\tiny2 &\tiny3 &\tiny4 &\tiny1 &\tiny2 &\tiny3 &\tiny4 &\tiny1 &\tiny2 &\tiny3 &\tiny4 \\ \hline
-    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{Plano de Trabalho}} } & \multicolumn{20}{c|}{} \\ 
+    
+    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{3. Projeto}} } & \multicolumn{20}{c|}{} \\ 
     \multicolumn{4}{|c|}{} & \multicolumn{20}{c|}{} \\ \hline
-    \multicolumn{4}{|c|}{\multirow{2}{*}{Elaboração do Plano de Trabalho} } &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & & & & & & & & \\ \cline{5-24}
-    \multicolumn{4}{|c|}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & & & & & & & & & \\ \hline
-    \multicolumn{4}{|c|}{\multirow{2}{*}{Entrega do Plano de Trabalho} } & & & & &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & & & & & & \\ \cline{5-24}
-    \multicolumn{4}{|c|}{} & & & & &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & & & & & & & \\ \hline
+    \multicolumn{4}{|c|}{\multirow{2}{*}{3.1 Falhas e Análise de Requisitos} } &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & & & & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{} & & & &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & & & & \\ \hline
+    \multicolumn{4}{|c|}{\multirow{2}{*}{3.2 Aplicação} } & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{} & & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} & & \\ \hline
     
-    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{Preâmbulo}} } & \multicolumn{20}{c|}{} \\ 
-    \multicolumn{4}{|c|}{} & \multicolumn{20}{c|}{} \\ \hline
-    \multicolumn{4}{|c|}{\multirow{2}{*}{1. Introdução} } & & & & & & &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & & & & \\ \cline{5-24}
-    \multicolumn{4}{|c|}{} & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & & & & & \\ \hline
-    \multicolumn{4}{|c|}{\multirow{2}{*}{1.1 Objetivos} } & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & & \\ \cline{5-24}
-    \multicolumn{4}{|c|}{} & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & & & \\ \hline
-    \multicolumn{4}{|c|}{\multirow{2}{*}{1.2 Justificativa e Motivação} } & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & \\ \cline{5-24}
-    \multicolumn{4}{|c|}{} & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & & \\ \hline
-        \multicolumn{4}{|c|}{\multirow{2}{*}{1.3 Metodologia} } & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & & \\ \cline{5-24}
-    \multicolumn{4}{|c|}{} & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & & \\ \hline
-    \multicolumn{4}{|c|}{\multirow{2}{*}{1.5 Organização do Texto} } & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & & & & & & & \\ \cline{5-24}
-    \multicolumn{4}{|c|}{} & & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} & & & & & & & & \\ \hline
+    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{Resultados Preliminares}} } & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{} & & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} & & & \\ \hline
     
-    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{2. Revisão Bibliográfica}} } & \multicolumn{20}{c|}{} \\ 
-    \multicolumn{4}{|c|}{} & \multicolumn{20}{c|}{} \\ \hline
-    \multicolumn{4}{|c|}{\multirow{2}{*}{2.1 Telefonia convencional} } & & & & & & & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} & & & \\ \cline{5-24}
-    \multicolumn{4}{|c|}{} & & & & & & & & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} & & & \\ \hline
-    \multicolumn{4}{|c|}{\multirow{2}{*}{2.2 Voz sobre IP (VoIP)} } & & & & & & & & & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} \\ \cline{5-24}
-    \multicolumn{4}{|c|}{} & & & & & & & & & & & & & & & & & & & & \\ \hline
+    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{Implementações}} } & & & & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{} & & & & & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} & & \\ \hline
     
-    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{Resultados Preliminares}} } & & & & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & & & \\ \cline{5-24}
-    \multicolumn{4}{|c|}{} & & & & & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} & & & & \\ \hline
-    
-    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{Implementações}} } & & & & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} &\colorbox{red}{} & & & & \\ \cline{5-24}
-    \multicolumn{4}{|c|}{} & & & & & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} &\colorbox{blue}{} & & & & \\ \hline
-    
-    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{Entrega da 1 Etapa Concluida}} } & & & & & & & & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} & & \\ \cline{5-24}
-    \multicolumn{4}{|c|}{} & & & & & & & & & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} & & \\ \hline
+    \multicolumn{4}{|c|}{\multirow{2}{*}{\textbf{Entrega da 2 Etapa Concluida}} } & & & & & & & & & & & & & & & & & &\colorbox{red}{} &\colorbox{red}{} & \\ \cline{5-24}
+    \multicolumn{4}{|c|}{} & & & & & & & & & & & & & & & & & &\colorbox{blue}{} &\colorbox{blue}{} & \\ \hline
     \end{tabular}
 \end{table}
 
