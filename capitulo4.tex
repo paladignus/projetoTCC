@@ -27,12 +27,12 @@ E podem ser obtidos respectivamente nos seguintes endereços:
   \item http://downloads.asterisk.org/pub/telephony/asterisk/
 \end{itemize}
 
-Após o download dos mesmo foram descompactados e compilados na  mesma ordem em foram baixados, pois, os modulos são independentes, ou seja, a compilação de um módulo reflete diretamente na compilação do outro, a exemplo que caso seja compilado o módulo do Asterisk antes do módulo LIBPRI, a compilação do Asterisk não reconhecerá as funções habilitadas pelo pacote LIBPRI.
+Após o download dos mesmo foram descompactados e compilados na mesma ordem em que foram baixados, pois, os modulos são independentes, ou seja, a compilação de um módulo reflete diretamente na compilação do outro, a exemplo, caso seja compilado o módulo do Asterisk antes do módulo LIBPRI, a compilação do Asterisk não reconhecerá as funções habilitadas pelo pacote LIBPRI.
 
 Após a instalação do Asterisk algumas pastas e arquivos são criados por ele para sua respectiva configuração e armazenamento das informações, pois o Asterisk é dividido em módulos, cada um representando uma funcionalidade como aplicação, função, canal de comunicação, protocolo e outros, e para correta configuração destas funcionalidades e necessário correta construção e configuração destes arquivos, e no decorrer do projeto, serão abordados os arquivos de configuração pertinentes para a correta construção do protótipo para ser testado no teleatendimento.
 
 \subsection{Protótipo}
-O protótipo consiste na construção de servidor PABX híbrido para o teleatendimento da Polícia Miltar de Dourados, onde será configurado as funcionalidades do Asterisk pertinentes a este teleatendimento, logo, será apresentado os arquivos com as configurações necessárias para esta finalidade.
+O protótipo consiste na construção de servidor PABX híbrido para o teleatendimento da Polícia Miltar de Dourados, onde serão configuradas as funcionalidades do Asterisk pertinentes a este teleatendimento, logo, serão apresentados os arquivos com as configurações necessárias para esta finalidade.
 
 \subsubsection{Plano de Discagem}
 O plano de discagem define todo o funcionamento do servidor Asterisk, é onde define os grupos e regras de discagem, ou seja, como as chamadas de entradas e saída do servidor serão tratadas, e quais funcionalidades serão atividades e como funcionarão, o arquivo onde é programado o plano de discagem é o ``extensions.conf'' e fica localizado dentro da pasta ``/etc/asterisk/'' \cite{alexandrekeller2014}.
@@ -101,7 +101,7 @@ Foi criado uma grupo para os atendentes logo pode-se capturar as chamadas tanto 
 
 Há duas formas de transferência de chamadas, sendo as cegas onde não há a consulta prévia do destinatário da transferência ou assistida na qual é realizada uma consulta prévia do destinatário da transferência \cite{alexandrekeller2014}.
 
-Optou-se em deixar as duas formas de transferência para o teleatendimento, a opção blindxfer = \#, define a transferência as cegas utilizando o tecla de sustenido, e a opção atxfer = *2 define a transferência assistida utilizando junção das teclas asterisco mais o numeral 2 a figura \ref{Figura25} ilustra as opções que devem estar habilitadas no arquivo ``features.conf''.
+Optou-se em deixar as duas formas de transferência para o teleatendimento, a opção blindxfer = \#, define a transferência as cegas utilizando a tecla de sustenido, e a opção atxfer = *2 define a transferência assistida utilizando a junção das teclas asterisco mais o numeral 2 a figura \ref{Figura25} ilustra as opções que devem estar habilitadas no arquivo ``features.conf''.
 
 \begin{figure}[h]
 	\centering
@@ -111,8 +111,7 @@ Optou-se em deixar as duas formas de transferência para o teleatendimento, a op
 \end{figure}
 
 \subsubsection{Placa de Comunicação}
-
-Para o projeto no teleatendimento, foi adquirido uma placa FXO (\textit{Foreign eXchange Office}), precisamente a placa TDM410P, com quatro portas, ou seja, recebe tom de discagem. Configurou-se os arquivos ``dahdi-channels.conf'' localizado em ``/etc/asterisk/'', onde este define os canais de comunicação, e o arquivo ``system.conf'' localizado em ``/etc/dahdi/'', onde este especifica como cada canal de comunicação ira se comunicar com o Kernel\footnote{O núcleo do Linux, forma a estrutura base do sistema operacional}.
+Para a placa comunicar com o Asterisk é necessário a configuração dos arquivos ``dahdi-channels.conf'' localizado em ``/etc/asterisk/'', onde este define os canais de comunicação, e o arquivo ``system.conf'' localizado em ``/etc/dahdi/'', onde este especifica como cada canal de comunicação ira se comunicar com o Kernel\footnote{O núcleo do Linux, forma a estrutura base do sistema operacional}.
 
 As figuras \ref{Figura26} e \ref{Figura27} ilustram como ficou a configuração dos arquivos ``dahdi-channels.conf'' e ``system.conf'' respectivamente para atender o projeto do teleatendimento.
 
@@ -142,7 +141,7 @@ Para o teste realizado no teleatendimento, permaneceu o armazenamento em um arqu
     \label{Figura28}
 \end{figure}
 
-A figura 29 ilustra o arquivo master.csv, com a entrada de uma chamada, e exemplificando os paramentos mais ertinentes temos o calldat, é a data da chamada, src, é o número do originador da chamada, dst, é quem recebeu a chamada, duration, é o tempo que o originador permaneceu deste que caiu na fila até o fim do atendimento, billsec, é o tempo que originador foi atendido pelo atendente, uniqueid, é o identificador da chamada, ou seja é uma número único que é gerado para cada chamada.
+A figura 29 ilustra o arquivo master.csv, com a entrada de uma chamada, e exemplificando os paramentos mais pertinentes temos o \textit{calldat}, é a data da chamada, \textit{src}, é o número do originador da chamada, \textit{dst}, é quem recebeu a chamada, \textit{duration}, é o tempo que o originador permaneceu deste que caiu na fila até o fim do atendimento, \textit{billsec}, é o tempo que originador foi atendido pelo atendente, \textit{uniqueid}, é o identificador da chamada, ou seja é uma número único que é gerado para cada chamada.
 
 \begin{figure}[h]
 	\centering
@@ -152,14 +151,14 @@ A figura 29 ilustra o arquivo master.csv, com a entrada de uma chamada, e exempl
 \end{figure}
 
 \subsubsection{Estações de Trabalho dos Atendentes}
-As estações de trabalhos dos atendentes já estão aptas para o emprego do teste no teleatendimento, a única configuração necessária foi ter que instalar o softphone nas estações e aquisição de headsets para o recebimento das chamadas.
+As estações de trabalhos dos atendentes já estão aptas para o emprego do teste no teleatendimento, a única configuração necessária foi ter que instalar o softfone nas estações e aquisição de headsets para o recebimento das chamadas.
 
-O softphone escolhido foi o zoiper, pois o mesmo tem a possibilidade de configuração para os protocolos SIP e IAX2, e para o teste realizado no teleatendimento foi utilizado o procolo IAX2. A figura \ref{Figura30} ilustra o softphone apto a receber chamadas.
+O softfone escolhido foi o zoiper, pois o mesmo tem a possibilidade de configuração para os protocolos SIP e IAX2, e para o teste realizado no teleatendimento foi utilizado o procolo IAX2. A figura \ref{Figura30} ilustra o softfone apto a receber chamadas.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=4cm]{imagens/zoiper.png}
-	\caption{Softphone instalado nas estações de trabalho}
+	\caption{Softfone instalado nas estações de trabalho}
     \label{Figura30}
 \end{figure}
 
