@@ -4,9 +4,9 @@
 \chapter{Introdução}%Cap.1
 %\thispagestyle{empty}
 %\addcontentsline{toc}{chapter}{Introdução}
-Em sociedade sempre necessitamos de serviços, sejam eles públicos ou privados, mas quando ocorre a necessidade de um serviço de um órgão da segurança pública, geralmente ele não está presente nas proximidades, e o meio mais preciso e ágil de acioná-lo é através do telefone emergencial que este disponibiliza.
+Em sociedade sempre necessitamos de serviços, sejam eles públicos ou privados, mas quando ocorre a necessidade de um serviço de um órgão de segurança pública, geralmente ele não está presente, e o meio mais preciso e ágil de acioná-lo é através do telefone emergencial que este disponibiliza.
 
-Os órgãos de segurança pública como qualquer empresa ou instituição necessitam do sistema de telefonia para sua própria comunicação interna ou externa, bem como atender por meio de números emergenciais como, por exemplo, o número emergencial 190 da Polícia Militar.
+Estes órgãos como qualquer empresa ou instituição necessitam do sistema de telefonia para sua própria comunicação interna ou externa, bem como atender por meio de números emergenciais como, por exemplo, o número emergencial 190 da Polícia Militar.
 
 Um cidadão ao efetuar uma ligação para um número emergencial, precisa ser atendido com eficiência. Desse modo, as linhas emergenciais devem estar disponíveis 24 horas por dia, isto é, não devem haver linhas defeituosas, congestionadas ou comprometidas, seja por falha técnica ou humana. No entanto, essas falhas existem.
 
@@ -18,13 +18,15 @@ No município de Dourados, o comandante Ary Carlos Barbosa do 3º Batalhão de P
 
 O problema relatado pelo comandante aparentemente é técnico, porém também pode se referir a uma falha humana, pois na mesma reportagem a autora \citeonline{eduardarosa2014} em seu artigo jornalístico descreve o depoimento de outras pessoas entrevistadas que disseram que tentaram por algumas vezes o atendimento e não conseguiram ser atendidas.
 
-Uma possível melhoria tecnológica no teleatendimento da Polícia Militar é através do emprego de uma tecnologia que está em constante evolução e expansão, como por exemplo o VoIP. 
+Uma possível melhoria tecnológica no teleatendimento da Polícia Militar é através do emprego de uma tecnologia que está em constante evolução e expansão, como por exemplo a VoIP. 
 
-A VoIP permite o tráfego de voz sobre redes de computadores, sendo possívelefetuar e receber ligações entre computadores, telefones comuns, telefones IP e celulares. Pode também ser utilizada como centrais de PABX \textit{(Private Automatic Branch eXchange)}, que podem ser substituídas por servidores de PABX IP \textit{(Private Automatic Branch eXchange Internet Protocol)} \cite{glauciadasilvaribeiro2011}.
+A VoIP permite o tráfego de voz sobre redes de computadores, sendo possível efetuar e receber ligações entre computadores, telefones comuns, telefones IP e celulares. Pode também ser utilizada como centrais de PABX \textit{(Private Automatic Branch eXchange)}, que podem ser substituídas por servidores de PABX IP \textit{(Private Automatic Branch eXchange Internet Protocol)} \cite{glauciadasilvaribeiro2011}.
 
 Embora a VoIP tenha melhorias por utilizar da rede de dados para trafegar voz, é inegável que a rede de telefonia convencional possui uma abrangência maior, com sua estrutura envolvendo todas as localidades do planeta. Essa é uma grande vantagem que a tecnologia empregada na rede de telefonia pública comutada (RTPC), em inglês PSTN \textit{(Public Service Telephony Network)} possui sobre a tecnologia de VoIP \cite{theodorewallingford2005}.
 
-Portanto, o Asterisk\footnote{Software de tefonia de licença gratuita, disponibilizado pela empresa Digium.} é considerado uma central de telefonia híbrida, pois tem como benefício o emprego da tecnologia de telefonia convencional, como a tecnologia VoIP, logo, este trabalho tem como proposta, proporcionar uma melhoria no teleatendimento da Polícia Militar, utilizando a ferramenta Asterisk por meio de uma central de telefonia híbrida.
+O Asterisk\footnote{Software de tefonia de licença gratuita, disponibilizado pela empresa Digium.} é considerado uma central de telefonia híbrida, pois tem como benefício o emprego da tecnologia de telefonia convencional, como a tecnologia VoIP.
+
+Portanto ele é uma solução viável para este trabalho que tem como proposta, proporcionar uma melhoria no eleatendimento da Polícia Militar, utilizando de funcionalidades de uma central de telefonia híbrida.
 
 % ================= Objetivos =================================
 \section{Objetivos}
@@ -36,14 +38,14 @@ Dado o domínio do teleatendimento emergencial da Polícia Militar de Dourados, 
 
 \begin{itemize}
 	\item Explorar o problema através de aplicação de questionários aos atendentes;
-	\item Realizar a análise de requisitos necessário do ambiente do teleatendimento para o emprego de uma servidor PABX híbrido.
+	\item Realizar a análise de requisitos necessário do ambiente do teleatendimento para o emprego de uma central telefônica híbrida.
 	\item Implementar um protótipo que empregue funcionalidades de PABX no teleatendimento.
-	\item Propiciar o armazenamento das informações de todas as chamadas recebidas pela central telefônica.
+	\item Propiciar o armazenamento das informações bem como a gravação das chamadas.
 \end{itemize}
 
 %================== Justifica\c{c}\~{a}o/Motiva\c{c}\~{a}o =====================
 \section{Justificativa/Motivação}
-Devido as constantes reclamações da população douradense sobre qualidade e funcionamento do teleatendimento da Polícia Militar destinados ao diretor técnico do CIOPS\footnote{Órgão onde concentra-se o teleatendimento emergencial da Polícia Militar de Dourados.} (Centro Integrado de Operações de Segurança Pública) e a possível deficiência técnica ou até mesmo humana no teleatendimento emergencial da Polícia Militar de Dourados. Tem-se como motivação para este trabalho uma proposta de melhoria nesse teleatendimento emergencial, explorando uma alternativa viável e acessível como a tecnologia VoIP que está em constante evolução e expansão, bem como, o emprego de uma ferramenta de licença gratuita como o Asterisk que agrega uma gama enorme de funcionalidades a um ambiente de telefonia convencional, trazendo não tão somente conforto e segurança ao atendentes, bem como, confiança aos cidadãos douradenses para este teleatendimento.
+Devido as constantes reclamações da população douradense sobre qualidade e funcionamento do teleatendimento da Polícia Militar destinados ao diretor técnico do CIOPS\footnote{Órgão onde concentra-se o teleatendimento emergencial da Polícia Militar de Dourados.} (Centro Integrado de Operações de Segurança Pública) e a possível deficiência técnica ou até mesmo humana no teleatendimento emergencial da Polícia Militar de Dourados. Tem-se como motivação para este trabalho uma proposta de melhoria nesse teleatendimento emergencial, explorando uma alternativa viável e acessível como a tecnologia VoIP que está em constante evolução e expansão, bem como, o emprego de uma ferramenta de licença gratuita como o Asterisk que agrega uma gama enorme de funcionalidades a um ambiente de telefonia convencional, trazendo somente conforto e segurança ao atendentes, bem como, confiança aos cidadãos douradenses para este teleatendimento.
 
 \section{Metodologia}
 A metodologia envolveu as seguintes etapas:
@@ -61,7 +63,7 @@ Detalhando a metodologia, tem-se na primeira etapa, a fundamentação teórica. 
 
 	Na  terceira etapa, relatara as funcionalidades da ferramenta eleita, bem como, alguns recursos avançados desta, e como essa ferramenta agregara valor ao ambiente de telefonia para o seu emprego.
 
-	Na quarta etapa, apresentará as falhas técnicas ou mesmo humanas apontadas pelos atendentes através do emprego do questionário, bem como, pelo período de permanência para mapear o fluxo operacional e realizar à analise de requisitos para o emprego e configuração da ferramenta.
+	Na quarta etapa, apresentará as falhas técnicas ou mesmo humanas apontadas pelos atendentes através do emprego do questionário, para mapear o fluxo operacional e realizar à analise de requisitos para o emprego e configuração da ferramenta.
 
 	Na quinta etapa, sucederá a instalação das bibliotecas e dependências do Asterisk, bem como, sua própria instalação e configuração para à aplicação do protótipo do servidor VoIP, e ainda, coletar os resultados ao aplicarmos a ferramenta Asterisk.
 
@@ -108,14 +110,12 @@ Detalhando a metodologia, tem-se na primeira etapa, a fundamentação teórica. 
 \newpage
 %==================== Organiza\c{c}\~{a}o do Texto ========================
 \section{Organização do Texto}
-Este trabalho está estruturado em cinco capítulos, descrito da seguinte forma:
+Este trabalho está estruturado em cinco capítulos, no primeiro descreve de maneira sucinta a abordagem do assunto que será trabalhado, ou seja, o problema apresentado e a escolha da solução a qual sera empregada para a solução deste.
 
-O capítulo 1, descreve de maneira sucinta a abordagem do assunto que será trabalhado, ou seja, o problema apresentado e a escolha da solução a qual sera empregada para a solução deste.
+O segundo apresentará a revisão bibliográfica, ou seja, o referencial teórico, para que se possa elaborar o projeto. 
 
-O capítulo 2 apresentara a revisão bibliográfica, ou seja, o referencial teórico, para que se possa elaborar o projeto. 
+O terceiro definirá a descrição do projeto, deste o sistema operacional eleito para que se possa instalar a ferramenta Asterisk, a sua própria instalação e de suas bibliotecas e dependências, por fim sua configuração para que se possa chegar ao resultado esperado que é o servidor VoIP, para que possa ser empregado no teleatendimento.
 
-O capítulo 3 tera a descrição do projeto, deste o sistema operacional eleito para que se possa instalar a ferramenta Asterisk, a sua própria instalação e de suas bibliotecas e dependências, por fim sua configuração para que se possa chegar ao resultado esperado que é o servidor VoIP, para que possa ser empregado no teleatendimento.
+O quarto será dedicado aos testes do servidor VoIP, bem como, a coleta dos resultados para levantamento e análise dos detalhes da ferramenta ao ser aplicada no ambiente do teleatendimento.
 
-O capítulo 4, será dedicado aos testes do servidor VoIP, bem como, a coleta dos resultados para levantamento e analise dos detalhes da ferramenta ao ser aplicada no ambiente do teleatendimento.
-
-O capítulo 5 apresentará as conclusões, assim como algumas sugestões de trabalhos futuros, para a continuidade desta pesquisa.
+O quinto apresentará as conclusões, assim como algumas sugestões de trabalhos futuros, para a continuidade desta pesquisa.
