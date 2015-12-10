@@ -3,7 +3,7 @@
 \chapter{Aplicação} %\label{cap_exemplos}
 %\thispagestyle{empty}
 \section{Instalação do Asterisk}
-A instalação do Asterisk requer e exige uma série de cuidados e detalhes,  para que se tenha um ambiente de telefonia estável e disponível o maior tempo possível. Logo, e necessário uma instalação onde busca-se a menor quantidade de problemas e com maior tempo operando, pois a compilação do Asterisk não é um processo trivial \cite{alexandrekeller2014}.
+A instalação do Asterisk requer e exige uma série de cuidados e detalhes,  para que se tenha um ambiente de telefonia estável e disponível o maior tempo possível. Logo, e necessário uma instalação onde busca-se a menor quantidade de problemas e com maior tempo operando, pois a compilação do Asterisk não é um processo fácil \cite{alexandrekeller2014}.
 
 Apesar de haver duas formas de instalação, onde pode ser por SVN\footnote{Sistema de controle de versão} que mantêm um compartilhamento do desenvolvimento do sistemas com todas as novas funcionalidades, porém ainda nem sempre devidamente testadas, logo optou-se por baixar os pacotes compactados sendo eles:
 
@@ -165,4 +165,11 @@ O softfone escolhido foi o zoiper, pois o mesmo tem a possibilidade de configura
 \subsubsection{Resultados Obtidos}
 O servidor Asterisk foi aplicado por curto período de teste no teleatendimento, pois se trata de um protótipo, mas observou que o mesmo pode cumprir com a finalidade pretendida, que foi suprir as falhas observadas neste teleatendimento, através das funcionalidades que o mesmo possui e as quais foram configuradas pertinentes a necessidade deste teleatendimento.
 
-A qualidade do áudio foi também surpreendente, bem como o número de informações armazenadas pela bilhetagem, a fila também se mostrou promissora pois o cidadão pode já de inicio identificar qual órgão de segurança pública desde o início da chamada, e ainda tem uma posição de onde esta na fila.
+A qualidade do áudio foi surpreendente, porque não foi implementado nenhum tipo de QoS, e  apesar da LAN conter poucos computadores, ela está fragmentada com dois cascateamentos,\footnote{Interconexão de dois ou mais switches em série
+} os teleatendentes que faziam-se presentes no momento dos teste do servidor no teleatendimento, ficaram contentes com a gravação das chamadas, e um comentário por parte de um destes ao ouvir o áudio de uma chamada foi, “só o fato de gravar as chamadas já resolve quase todos os problemas”. 
+
+A fila  também se mostrou promissora pois o cidadão ao efetuar a chamada pode já de início identificar qual órgão de segurança pública desde o início da chamada, e ainda tem uma posição de onde está na fila. Ela ainda proporciona a autenticação dos usuários, onde é registrado quando o atendente ficou disponível para o atendimento e quando ficou indisponível. O registro dessas informações ficou armazenados tanto no arquivo “master.csv”, e a nível de sistema no arquivo “queue.log”.
+
+As informações geradas e armazenadas pela bilhetagem possibilitam estatísticas de quantas chamadas ocorrem diariamente, quantas cada policial atendeu, quanto tempo cada cidadão aguardou na fila para ser atendido, e quanto tempo ficou no atendimento.
+
+A captura e transferência das chamadas também foi relevante, pois os atendentes não precisão mais se levantar de suas cabines de atendimento. O mesmo cedê-las a outro atendente para que esse possa colher informação de um cidadão pertinentes de uma chamada anterior. 
