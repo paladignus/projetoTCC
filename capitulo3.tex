@@ -6,16 +6,25 @@
 Com aplicação do questionário e o com o período de permanecia do teleatendimento da Polícia Militar de Dourados, ficou evidente algumas falhas técnicas e mesmo humanas neste teleatendimento.
 
 \subsection{Aplicação do Questionário}
-O questionário foi aplicado com o objetivo de apontar falhas, dentre as questões, a questão \textit{“Você sabe precisar quantas ligações o sistema de telefonia emergencial atende diariamente, e quantas dessas ligação, realmente são ocorrências, e quantas são trotes, pedidos de informação? Se sim informe a quantidade.”}, quatro responderam que sim, porém com valores desencontrados a exemplo o número de ocorrências de um foi 30 já outro foi 70 e assim também foi para os outros questionamentos, percebe que não há como contabilizar a quantidade de atendimentos diários. Outra questão foi \textit{“Você acredita que um sistema de telefonia onde possa gravar e identificar a ligações para este teleatendimento, agregaria vantagens?”}, somente um respondeu que não, pois segundo ele, “A população e hipócrita e mal educada usaria isto em desfavor da PM”, percebe que não como gravar as chamadas, e que por mais que isso seja uma melhoria, na visão deste pode ser maleficio.
+O questionário foi aplicado não somente com objetivo de apontar falhas, mas também de saber quais as opiniões dos policiais do teleatendimento tem sobre os atuais equipamentos utilizados por eles, e ainda saber sobre as possíveis melhorias advindas das funcionalidades da ferramenta Asterisk.
+
+Logo todos consideram que o seu trabalho é essencial para à sociedade e que o
+primeiro contado do cidadão é por intermédio deste teleatendimento, porém 85\% dos teleatendentes, não consideram que seu  local de trabalho tem o necessário para um atendimento de excelência a sociedade, bem como, não tem o equipamento ideal para prestar esse serviço.
+
+E na questão \textbf{``Você sabe precisar quantas ligações o sistema de telefonia emergencial atende diariamente, e quantas dessas ligação, realmente são ocorrências, e quantas são trotes, pedidos de informação? Se sim informe a quantidade.''}, 57\% responderam que sim, porém com valores desencontrados a exemplo o número de ocorrências de um foi 30 já outro foi 70 e assim também foi para os outros questionamentos, percebe que não há como contabilizar a quantidade de atendimentos diários.
+
+No questionário que tece questões sobre aprimoramentos do teleatendimento através das funcionalidades da ferramenta Asterisk, a questão \textbf{``Você acredita que um sistema de telefonia onde possa gravar e identificar a ligações para este teleatendimento, agregaria vantagens?''}, somente um respondeu que não, pois segundo ele, “A população e hipócrita e mal educada usaria isto em desfavor da PM”, percebe que não há como gravar as chamadas, e que por mais que isso seja uma melhoria, na visão deste pode ser maleficio.
+
+Todos os atendentes acreditam que um sistema que possam criar uma fila de espera e onde esta prioriza o atendente que esta mais tempo sem atender, seja o escalado para a próxima chamada, e todos também creem que um sistema de captura e transferência de chamadas é uma melhoria no teleatendimento, bem como, um sistema de teleconferência.
 
 \subsection{Falhas Humanas}
 Apesar destas falhas não serem objetos de estudo deste trabalho, não deixam de ser um fator preocupante para a eficiência do teleatendimento. E ainda estas falhas acabam relacionando-se indiretamente ou diretamente com algumas falhas técnicas que serão apontadas.
 
-Uma falha verificada foi com relação aos PA (\textit{Pontos de Atendimentos}), ou seja, quando um atendente por algum motivo necessita se ausentar de sua cabine de atendimento e porventura acaba esquecendo de desabilitar o seu PA, isso gera um transtorno para o solicitante pois, a ligação deste solicitante acaba caindo neste PA com o atendente ausente, só que para o solicitante que esta em uma situação urgência, emergência esta sendo gerado tom de chamada, e como consequência ele não é atendido.
+Uma falha verificada foi com relação aos PA (\textit{Pontos de Atendimentos}), ou seja, quando um policial por algum motivo necessita se ausentar de sua cabine de atendimento e porventura acaba esquecendo de desabilitar o seu PA, isso gera um transtorno para o solicitante pois, a ligação deste solicitante acaba caindo neste PA com o atendente ausente, só que para o solicitante que esta em uma situação urgência, emergência esta sendo gerado tom de chamada, e como consequência ele não é atendido.
 
-Outra falha que coexiste com a anterior, é o fato que o outro atendente tem que se levantar de sua cabine de atendimento, seja para atender a chamada de seu colega de trabalho ou mesmo derrubá-la, ou seja, desabilitar o PA do colega enquanto ocorre uma chamada de um solicitante ou ignorá-la, deixar tocar até dar tom de ocupado para o solicitante.
+Outra falha que coexiste com a anterior, é o fato que o outro atendente tem que se levantar de sua cabine, seja para atender a chamada de seu colega de trabalho ou mesmo derrubá-la, ou seja, desabilitar o PA do colega enquanto ocorre uma chamada de um solicitante ou ignorá-la.
 
-E os atendentes além de terem que atender as chamadas, ainda tem que ser despachadorores, ou seja, despachar as ocorrências com as viaturas, e nesse momento outra chamada é recebida no PA deste atendente e o mesmo fica impossibilitado de atender esta chamada devido a estar passando as informações da solicitação anterior para a viatura, logo ele ignora ou derruba a chamada.
+E os policiais além de terem que atender as chamadas, ainda tem que ser despachadores, ou seja, despachar as ocorrências com as viaturas, e nesse momento outra chamada é recebida no PA deste atendente e o mesmo fica impossibilitado de atender esta chamada devido a estar passando as informações da solicitação anterior para a viatura, logo ele ignora ou derruba a chamada.
 
 A ferramenta Asterisk tem funcionalidades técnicas como DAC (\textit{Distribuição Automática de Chamadas}) ou captura de chamadas para amenizar ou mesmo cessar as falhas humanas apresentadas.
 
@@ -60,7 +69,7 @@ A ferramenta Asterisk faz o elo de ligação entre a PSTN e o VoIP, ou seja, é 
 \subsection{Telefônia}
 No teleatendimento existem quatro ramais analógicos administrados pela operadora de telefonia, que chegam no quadro de distribuição através de cabo FE\footnote{Fio telefônico para instalações aéreas} e posteriormente e distribuídos até os PA dos atendentes.
 
-Para a ferramenta fazer a integração da telefonia convencional com o VoIP, foi adquirida uma placa TDM410P 4 portas FXO (\textit{recebe tom de discagem}) para conexão com os atuais ramais analógicos do teleatendimento, porém, a ferramenta disponibilizará internamente os ramais por meio da LAN, ou seja, por intermédio do VoIP, logo, este teleatendimento contará com todas as funcionalidades da ferramenta Asterisk. A placa é ilustrada na figura \ref{Figura16}.
+Para a ferramenta fazer a integração da telefonia convencional com o VoIP, foi adquirida uma placa TDM410P 4 portas FXO (\textit{recebe tom de discagem}) para conexão com os atuais ramais analógicos do teleatendimento, porém, a ferramenta disponibilizará internamente os ramais por meio da LAN, ou seja, por intermédio da VoIP, logo, este teleatendimento contará com todas as funcionalidades da ferramenta Asterisk. A placa é ilustrada na figura \ref{Figura16}.
 
 \begin{figure}[h]
 	\centering
